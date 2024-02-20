@@ -1,0 +1,93 @@
+# Lab Assignment 1 : Deploying and Managing Linux and Windows Operating Systems
+## Task 1 & 2: Installing and Configuring the VMs
+
+Going to leave this section blank for now since I'm assuming everyone knows how to configure virtual box but here are the links to download the needed vms:
+- Windows Server 2022 (Evaluation edition) > [.iso](https://go.microsoft.com/fwlink/p/?LinkID=2195280&clcid=0x409&culture=en-us&country=US)
+- Ubuntu > [.iso](https://releases.ubuntu.com/22.04.3/ubuntu-22.04.3-desktop-amd64.iso?_gl=1*1ya5rm2*_gcl_au*NDIxNjk2NzA1LjE3MDY3NDU4NDg.&_ga=2.225222554.1416801686.1708388918-537373877.1706745814) 
+
+*<b>NOTE</b>: You only need to configure a Windows Server VM and a Linux machine, you don't need to configure a Windows 10/11 machine.*
+
+## Task 3: Configuring IPv4 Addresses & Connecting Linux & Windows Machines
+
+### Creating NAT Network
+
+In order to connect the VMs together, you need to make sure they are all on the same network. The first step to doing that is creating a NAT Network. 
+1. Open Virtual Box
+1. Hover over the box labelled "Tools" and click on the icon with three dots.
+1. Select Network>NAT Network>Create
+1. Create a network with the following options:
+	* Name: CIT210L
+	* IPv4 Prefix: 192.168.10.0/24
+	* Enable DHCP
+1. Open the settings on Virtual Box for both the Linux machine and Windows Server and go to Settings>Network>Adapter 1 and set "Attached to:" to NAT Network.
+
+### Pinging Linux & Windows Machines
+
+Before you can ping the windows server, you need to create a rule to allow ICMP (Internet Control Message Protocols) ping requests to go through. In order to do that, you need to open the powershell command line as an administrator and type in the following commands: <br>
+```powershell
+netsh 
+advfirewall firewall 
+add rule name="Allow ICMPv4 Requests" protocol=icmpv4:8,any dir=in action=allow
+```
+If you entered the rule correctly, the machine will respond with `OK.`
+
+*<b>REMINDER</b>: When you are done using netsh, press ^C to return to the normal powershell line.*
+
+Once you have created the rule for the Windows Server, you can get the ip addresses of both machines and ping them to verify connectivity.
+
+#### Pinging the Linux Machine from Windows Server
+
+Open the linux terminal and run the following commands: <br>
+```bash
+sudo apt install net-tools
+ifconfig
+``` 
+If you get an error from Linux saying that you are not in the root folder directory, run the below commands, then run the ones above again.
+```bash
+su # su stands for substitute user, which switches the user account in the terminal. Leaving it blank causes it to default to root
+# when it prompts you for the root password enter your user password
+su <your username> # switches you back to your user account, since you don't want to stay in root
+```
+If `ifconfig` runs successfully, you should see an output that looks something like this:
+```
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.29.194.47  netmask 255.255.240.0  broadcast 172.29.207.255
+        inet6 fe80::215:5dff:fe12:afa0  prefixlen 64  scopeid 0x20<link>
+        ether 00:15:5d:12:af:a0  txqueuelen 1000  (Ethernet)
+        RX packets 462  bytes 541767 (541.7 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 296  bytes 25929 (25.9 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 9  bytes 1720 (1.7 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 9  bytes 1720 (1.7 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+```
+Record the inet address, that is your Linux VMs IPv4 address.
+
+Once you have the IPv4 address, launch the powershell command line on the Windows Server VM and then type in the following command:
+```powershell
+ping <Linux IP address>
+```
+
+#### Pinging the Windows Server from the Linux Machine
+
+Open the powershell terminal on the Windows server and type in the following command to get the IP address for the VM:
+```powershell
+ipconfig
+```
+
+Record the IPv4 address and then launch the terminal on the Linux VM machine. Run the following command on the terminal
+```bash
+ping -c 4 <Windows Server IP address>
+# ping on Linux will run continously until you press ^C unless you specify how many times to ping using the -c flag
+# in this instance, I've instructed it to run 4 times.
+```
+
+## Task 4: Remote access using SSH
+TBA
