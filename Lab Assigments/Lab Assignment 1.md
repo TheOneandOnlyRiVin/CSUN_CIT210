@@ -85,7 +85,7 @@ ipconfig
 Record the IPv4 address and then launch the terminal on the Linux VM machine. Run the following command on the terminal
 ```bash
 ping -c 4 <Windows Server IP address>
-# ping on Linux will run continously until you press ^C unless you specify how many times to ping using the -c flag
+# ping on Linux will run continously until you press ^C unless you specify how many times to ping by passing the -c arguement
 # in this instance, I've instructed it to run 4 times.
 ```
 
