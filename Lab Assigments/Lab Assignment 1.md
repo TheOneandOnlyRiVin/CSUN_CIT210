@@ -90,4 +90,59 @@ ping -c 4 <Windows Server IP address>
 ```
 
 ## Task 4: Remote access using SSH
-TBA
+
+In order to use the Secure Shell (SSH) to connect to the windows machine remotely, you need to install the OpenSSH software.
+
+### Installing OpenSSH Client onto Linux
+
+Before installing any software, you want to make sure your Ubuntu is up to date. Open the linux terminal and run the following commands: 
+```bash
+sudo apt-get update
+sudo apt-get upgrade
+```
+Now that it's up to date, run the below command to install the OpenSSH Client.
+```bash
+sudo apt install openssh-client
+```
+
+### Installing OpenSSH Server on Windows Server
+
+To install the OpenSSH Server software, you need to open powershell and type in the following commands:
+```powershell
+Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
+Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+Start-Service sshd
+Set-Service sshd -StartupType 'Automatic'
+Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
+```
+Once you run all of those commands correctly, you should see the following output in your terminal.
+```
+Name : OpenSSH.Client~~~~0.0.1.0
+State : Installed
+
+Name : OpenSSH.Server~~~~0.0.1.0
+State : Installed
+```
+
+Now that OpenSSH is installed on both the Linux & Windows Server VMs, it's time to connect them.
+
+### Connecting through SSH
+
+Open the linux terminal and type in the following command:
+```bash
+ssh <username>@<Windows Server IP>
+```
+When the prompt about fingerprints comes up, type yes. If everything goes well, you should see the below msg appear on your screen:
+```
+Microsoft Windows [Version ...]
+```
+You are now remoted into the Windows Server. Now you need to create a file to prove that you were able to successfully connect. In the current window, type the following batch commands:
+```batch
+cd Documents
+type nul > <LASTNAME>-LAB1-ssh.txt
+```
+Then switch over to the Windows Server VM and type in the following powershell commands to verify that the file was created successfully:
+```powershell
+cd Documents
+dir
+```
