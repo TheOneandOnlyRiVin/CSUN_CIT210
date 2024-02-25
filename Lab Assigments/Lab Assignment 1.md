@@ -141,7 +141,7 @@ Now that OpenSSH is installed on both the Linux & Windows Server VMs, it's time 
 
 Open the linux terminal and type in the following command:
 ```bash
-ssh <username>@<Windows Server IP>
+ssh <Windows username>@<Windows Server IP>
 ```
 When the prompt about fingerprints comes up, type yes. If everything goes well, you should see the below msg appear on your screen:
 ```
