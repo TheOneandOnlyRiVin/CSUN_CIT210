@@ -1,4 +1,13 @@
 # Lab Assignment 1 : Deploying and Managing Linux and Windows Operating Systems
+## Deliverables
+
+At the end of this assignement, you should be turning in a word doc with the following:
+- A screenshot of the VirtualBox homepage with your configured Linux and Windows Server VMs.
+- A screenshot of a your Linux machine successfully pinging the Windows Server and vice-versa.
+- The IP of your Linux Machine
+- A screenshot of the Linux SSH fingerprint authentication prompt (and you typing yes)
+- A screenshot of the file you created in the Windows Server.
+
 ## Task 1 & 2: Installing and Configuring the VMs
 
 Going to leave this section blank for now since I'm assuming everyone knows how to configure virtual box but here are the links to download the needed vms:
@@ -23,7 +32,9 @@ In order to connect the VMs together, you need to make sure they are all on the 
 
 ### Pinging Linux & Windows Machines
 
-Before you can ping the windows server, you need to create a rule to allow ICMP (Internet Control Message Protocols) ping requests to go through. In order to do that, you need to open the powershell command line as an administrator and type in the following commands: <br>
+Before you can ping the windows server, you need to create a rule to allow ICMP (Internet Control Message Protocols) ping requests to go through. In order to do that, you need to open the powershell command line as an administrator and type in the following commands: 
+
+*<b>REMINDER</b>: Whenever you access powershell to make changes to the system, make sure you launch it as an administrator (if you installed Windows Server as CLI-only it will auto-launch powershell as an admin)*
 ```powershell
 netsh 
 advfirewall firewall 
@@ -31,7 +42,7 @@ add rule name="Allow ICMPv4 Requests" protocol=icmpv4:8,any dir=in action=allow
 ```
 If you entered the rule correctly, the machine will respond with `OK.`
 
-*<b>REMINDER</b>: When you are done using netsh, press ^C to return to the normal powershell line.*
+When you are done using netsh, press ^C to return to the normal powershell line.
 
 Once you have created the rule for the Windows Server, you can get the ip addresses of both machines and ping them to verify connectivity.
 
