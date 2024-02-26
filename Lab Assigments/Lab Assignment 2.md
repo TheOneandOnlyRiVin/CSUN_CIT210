@@ -1,4 +1,4 @@
-# Lab 2 : Linux Directory Structure, Linux and Windows File Server, Windows Server Disk and Storage
+# Lab 2: Linux Directory Structure, Linux and Windows File Server, Windows Server Disk and Storage
 
 [Canvas Link](https://canvas.csun.edu/courses/150468/assignments/1855194)
 
@@ -77,8 +77,22 @@ cat linuxtest3.txt | sed 's/cow/computer/' > linuxtest4.txt
 **TASK 2.1-2.6 & 2.2.1-2.2.2** <br>
 - Screenshots of the successful script execution for each task
 
-**TASK 3** <br>
-TBA
+## Prerequesites
+
+In order to complete this lab, you will need to have pre-configured a Linux and Windows Server VM. 
 
 ## Task 1: Explore Linux Commands 
+
+The Lab Assignment on canvas gives step by step instructions for how to complete this task so I won't cover it here.
+
+## Task 2: Bash Shell Programming
+
+TBA
+
+## Task 3: Task 3: Configure File Server Connecting Windows and Linux (Samba)
+
+TBA
+
+## Task 4: Disks and Volumes (Windows Server)
+
 TBA
