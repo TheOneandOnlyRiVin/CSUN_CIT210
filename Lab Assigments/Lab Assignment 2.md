@@ -1,1 +1,79 @@
 # Lab 2 : Linux Directory Structure, Linux and Windows File Server, Windows Server Disk and Storage
+## Deliverables
+
+At the end of this assignment, you will be turning in a word doc containing the following:
+
+**TASK 1** <br>
+- The output of the following bash commands:
+```bash
+echo "A cow is grazing in the summer" > linuxtest3.txt
+echo "in the middle of June when all the" >> linuxtest3.txt
+echo "other cows are out in the field." >> linuxtest3.txt
+cat linuxtest3.txt | sed 's/cow/computer/' > linuxtest4.txt
+```
+
+**TASK 1.2** <br>
+- The output of the following bash commands:
+    - `ls-a>listing`
+    - `cat listing | les`
+
+**TASK 1.4** <br>
+- The output of the following bash commands:
+    - `which chmod`
+    - `where is chmod`
+
+**TASK 1.5** <br>
+- The permissions of the file working.txt both before and after changing the permissions. 
+- An explanation of the following bash commands:
+    - `chmod o+w working.txt`
+    - `chmod u-r working.txt`
+    - `chmod 777 working.txt`
+
+**TASK 1.6** <br>
+- Explain the output of the following commands:
+    - `dmesg | more`
+    - `passwd`
+    - `date`
+    - `hostname`
+    - `arch`
+    - `uname -a`
+    - `uptime`
+    - `whoami`
+    - `who`
+    - `id`
+    - `finger`
+    - `wc /etc/passwd`
+    - `top`
+    - `echo $SHELL`
+    - `clear`
+    - `history`
+    - `head /etc/passwd`
+    - `tail /etc/passwd`
+    - `more /etc/passwd`
+    - `less /etc/passwd`
+    - `lost`
+
+**TASK 2** <br>
+- Summarize the information in the following directories:
+    - /bin
+    - /usr/bin
+    - /sbin
+    - /tmp
+    - /boot
+- List the devices in /dev
+- A screenshot of the contents of the following files (use `cat` to display file contents):
+    - /proc/interrupts
+    - /proc/devices
+    - /proc/cpuinfo
+    - /proc/meminfo
+    - /proc/uptime
+- A screenshot of your login details (use grep)
+
+**TASK 2.1-2.6 & 2.2.1-2.2.2**
+- Screenshots of the successful script execution
+
+**TASK 3** <br>
+TBA
+
+## Task 1: Explore Linux Commands 
+TBA
