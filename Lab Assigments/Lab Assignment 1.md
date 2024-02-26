@@ -12,7 +12,7 @@ At the end of this assignement, you should be turning in a word doc with the fol
 
 Going to leave this section blank for now since I'm assuming everyone knows how to configure virtual box but here are the links to download the needed vms:
 - Windows Server 2022 (Evaluation edition) > [.iso](https://go.microsoft.com/fwlink/p/?LinkID=2195280&clcid=0x409&culture=en-us&country=US)
-- Ubuntu > [.iso](https://releases.ubuntu.com/22.04.3/ubuntu-22.04.3-desktop-amd64.iso?_gl=1*1ya5rm2*_gcl_au*NDIxNjk2NzA1LjE3MDY3NDU4NDg.&_ga=2.225222554.1416801686.1708388918-537373877.1706745814) 
+- Ubuntu > [.iso](https://ubuntu.com/download/desktop/thank-you?version=22.04.4&architecture=amd64) 
 
 *<b>NOTE</b>: You only need to configure a Windows Server VM and a Linux machine, you don't need to configure a Windows 10/11 machine.*
 
