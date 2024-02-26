@@ -1,4 +1,9 @@
 # Lab 2 : Linux Directory Structure, Linux and Windows File Server, Windows Server Disk and Storage
+
+[Canvas Link](https://canvas.csun.edu/courses/150468/assignments/1855194)
+
+[PDF Download](https://canvas.csun.edu/courses/150468/files/24362831?wrap=1)
+
 ## Deliverables
 
 At the end of this assignment, you will be turning in a word doc containing the following:
@@ -69,8 +74,8 @@ cat linuxtest3.txt | sed 's/cow/computer/' > linuxtest4.txt
     - /proc/uptime
 - A screenshot of your login details (use grep)
 
-**TASK 2.1-2.6 & 2.2.1-2.2.2**
-- Screenshots of the successful script execution
+**TASK 2.1-2.6 & 2.2.1-2.2.2** <br>
+- Screenshots of the successful script execution for each task
 
 **TASK 3** <br>
 TBA
