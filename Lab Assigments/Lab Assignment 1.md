@@ -57,6 +57,12 @@ If you get an error from Linux saying that you are not in the root folder direct
 ```bash
 su # su stands for substitute user, which switches the user account in the terminal. Leaving it blank causes it to default to root
 # when it prompts you for the root password enter your user password
+visudo
+```
+At the end of the file, put the following command:
+```<user> ALL=(ALL) ALL```
+Press Ctrl+X and then Y to exit the editor, then type the following:
+```bash
 su <your username> # switches you back to your user account, since you don't want to stay in root
 ```
 If `ifconfig` runs successfully, you should see an output that looks something like this:
