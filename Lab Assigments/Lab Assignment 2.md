@@ -4,6 +4,17 @@
 
 [PDF Download](https://canvas.csun.edu/courses/150468/files/24362831?wrap=1)
 
+### Table of Contents
+[Deliverables](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#deliverables)
+
+[Task 1: Explore Linux Commands](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#task-1-explore-linux-commands)
+
+[Task 2: Bash Shell Programming](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#task-2-bash-shell-programming)
+
+[Task 3: Configure File Server Connecting Windows and Linux (Samba)](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#task-3-configure-file-server-connecting-windows-and-linux-samba)
+
+[Task 4: Disks and Volumes (Windows Server)](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#task-4-disks-and-volumes-windows-server)
+
 ## Deliverables
 
 At the end of this assignment, you will be turning in a word doc containing the following:
@@ -89,7 +100,7 @@ The Lab Assignment on canvas gives step by step instructions for how to complete
 
 TBA
 
-## Task 3: Task 3: Configure File Server Connecting Windows and Linux (Samba)
+## Task 3: Configure File Server Connecting Windows and Linux (Samba)
 
 TBA
 
