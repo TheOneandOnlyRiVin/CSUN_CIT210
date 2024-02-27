@@ -88,6 +88,9 @@ cat linuxtest3.txt | sed 's/cow/computer/' > linuxtest4.txt
 **TASK 2.1-2.6 & 2.2.1-2.2.2** <br>
 - Screenshots of the successful script execution for each task
 
+**TASK 3**
+- Screenshot of a successful connection between the Windows Server and Linux VM.
+
 ## Prerequesites
 
 In order to complete this lab, you will need to have pre-configured a Linux and Windows Server VM. 
@@ -105,5 +108,7 @@ TBA
 TBA
 
 ## Task 4: Disks and Volumes (Windows Server)
+
+*<b>NOTE</b>: These instructions are for using the powershell-only version of Windows Server. If you want to use the GUI-version, the PDF has step-by-step instructions for how to complete it.*
 
 TBA
