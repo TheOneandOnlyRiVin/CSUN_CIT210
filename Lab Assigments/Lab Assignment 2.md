@@ -93,7 +93,7 @@ cat linuxtest3.txt | sed 's/cow/computer/' > linuxtest4.txt
 
 ## Prerequesites
 
-In order to complete this lab, you will need to have pre-configured a Linux and Windows Server VM. 
+In order to complete this lab, you will need to have pre-configured a Linux and Windows Server VM. These instructions are written with the assumption that you have the same Windows Server & Linux machines you used for the last lab. 
 
 ## Task 1: Explore Linux Commands 
 
@@ -101,7 +101,32 @@ The Lab Assignment on canvas gives step by step instructions for how to complete
 
 ## Task 2: Bash Shell Programming
 
-TBA
+Launch your Linux VM and open the terminal. Run the following commands to create a folder in your home directory and move into it:
+```bash
+mkdir Lab01
+ls #Always verify that the folder was created successfully before moving on
+cd Lab01
+```
+
+### 2.1 Creating a Bash Script
+Once you are in the Lab01 folder, you need to create your first script. First, you want to launch the nano editor by typing `nano hello.sh`. <br>
+This will create a file called hello.sh and open the nano editor with that file. Once you have nano open, type the following commands:
+```
+#!/bin/bash
+echo Hello World
+```
+Save and exit your work by pressing Ctrl+X, then Y, then Enter.
+
+Now that your script is created, you need to launch it. That means first giving the file execute permissions. In the linux terminal, type out the following commands:
+```bash
+chmod u+x hello.sh
+ls -la hello.sh
+```
+If the command was successful, you should see the output start with `-rwxrw-r-- 1`. That means that the file now can be executed by the owner. 
+
+Run the script by typing `./hello.sh`. You should get an output saying `Hello world`.
+
+### 2.1 Bash Shell Scripting
 
 ## Task 3: Configure File Server Connecting Windows and Linux (Samba)
 
