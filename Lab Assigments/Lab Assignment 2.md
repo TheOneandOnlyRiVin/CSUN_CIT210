@@ -151,9 +151,9 @@ Feel free to test the code with other numbers to see it's limits.
 
 ### 2.3 Creating a File Creation Script
 
-In this exercise you are going to be creating a script that creates a file that is specified at runtime.
+In this exercise you are going to be creating a script that creates a file that is specified at runtime. We are going to do this using the `touch` command, which creates a file in Linux.
 
-Open nano though the Linux Terminal again, this time creating a file called myshell.sh. Put the following code in the file:
+Open nano through the Linux Terminal again, this time creating a file called `myshell.sh`. Put the following code in the file:
 ```bash
 #!/bin/bash
 touch $1
@@ -164,7 +164,7 @@ Save and exit nano, give the file execute permissions, and then run it/verify th
 ./myshell.sh testfile
 ls
 ```
-Make sure testfile is shows up in the file list and then check the contents of the file using `cat`. You should see the following:
+Make sure testfile is shows up in the file list and then check the contents of the file using `cat`. You should see the following output:
 ```
 calc.sh
 hello.sh
@@ -173,9 +173,23 @@ testfile
 ```
 Test the script again, this time creating a file called `testfile1`.
 
-### 2.4 Creating a Date File
+### 2.4 Creating a Date File Script
 
-In this exercise you are going to be creating 
+In this exercise you are going to be creating a file whose name will be today's date in the format of ddmmyy.dat.
+
+Open nano again, creating a file called `date.sh`. Put the following code into the file:
+```bash
+#!/bin/bash
+touch `date +%d%b%y`.dat
+FILENAME=`date +%d%b%y`.dat
+touch $FILENAME
+```
+
+In this script, it is actually creating the file twice, using two seperate ways. In the first one, it is directly creating a file using touch and naming it by pulling the day(`%d`), month(`%b`), and year(`%y`) and combining them into a name. 
+
+[TO BE CONTINUED]
+
+Save and exit from Nano, then run the script. Check the directory to make sure the file is created.
 
 
 ## Task 3: Configure File Server Connecting Windows and Linux (Samba)
