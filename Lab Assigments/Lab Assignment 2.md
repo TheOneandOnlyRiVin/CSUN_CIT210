@@ -109,9 +109,10 @@ cd Lab01
 ```
 
 ### 2.1 Creating a Bash Script
+
 Once you are in the Lab01 folder, you need to create your first script. First, you want to launch the nano editor by typing `nano hello.sh`. <br>
 This will create a file called hello.sh and open the nano editor with that file. Once you have nano open, type the following commands:
-```
+```bash
 #!/bin/bash
 echo Hello World
 ```
@@ -126,7 +127,29 @@ If the command was successful, you should see the output start with `-rwxrw-r-- 
 
 Run the script by typing `./hello.sh`. You should get an output saying `Hello world`.
 
-### 2.1 Bash Shell Scripting
+### 2.2 Creating a Simple Addition Script
+
+For this task, we will be creating a simple bash script that can add two numbers together.
+
+Open nano again, this time creating a file called `calc.sh`. This time, put the following code inside:
+```bash
+#!/bin/bash
+#a simple script
+echo "$1 + $2 = $(($1 + $2))"
+```
+Save and exit from nano, give the file execute permissions, and launch it. You should get an error. That's because this script requires inputs. Try it again using the following command:
+```bash
+./calc.sh 2 2
+```
+You should get the following output:
+```
+2 + 2 = 4
+```
+When you are scripting with bash, you can push inputs to the function by putting them after the file name and definging them in the script by using `$`. Bash is an interpretive langauge, so it will read them automatically as strings, but depending on the context it will automatically convert them to numbers or other data types as needed.
+
+Feel free to test the code with other numbers to see it's limits.
+
+### 2.3 Creating a File Creation Script
 
 ## Task 3: Configure File Server Connecting Windows and Linux (Samba)
 
