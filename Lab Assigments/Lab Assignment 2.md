@@ -151,6 +151,33 @@ Feel free to test the code with other numbers to see it's limits.
 
 ### 2.3 Creating a File Creation Script
 
+In this exercise you are going to be creating a script that creates a file that is specified at runtime.
+
+Open nano though the Linux Terminal again, this time creating a file called myshell.sh. Put the following code in the file:
+```bash
+#!/bin/bash
+touch $1
+ls > $1
+```
+Save and exit nano, give the file execute permissions, and then run it/verify the output using the following commands:
+```bash
+./myshell.sh testfile
+ls
+```
+Make sure testfile is shows up in the file list and then check the contents of the file using `cat`. You should see the following:
+```
+calc.sh
+hello.sh
+myshell.sh
+testfile
+```
+Test the script again, this time creating a file called `testfile1`.
+
+### 2.4 Creating a Date File
+
+In this exercise you are going to be creating 
+
+
 ## Task 3: Configure File Server Connecting Windows and Linux (Samba)
 
 TBA
