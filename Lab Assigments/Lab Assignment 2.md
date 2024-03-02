@@ -4,12 +4,16 @@
 
 [PDF Download](https://canvas.csun.edu/courses/150468/files/24362831?wrap=1)
 
+### *<b>Disclaimer</b>: For ease of understanding, I've changed Task 2 in the PDF to 2.1.*
+
 ### Table of Contents
 [Deliverables](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#deliverables)
 
 [Task 1: Explore Linux Commands](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#task-1-explore-linux-commands)
 
-[Task 2: Bash Shell Programming](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#task-2-bash-shell-programming)
+[Task 2.1: Bash Shell Programming](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#task-2.1-bash-shell-programming)
+
+[Task 2.2: Troubleshooting Bash Scripts]()
 
 [Task 3: Configure File Server Connecting Windows and Linux (Samba)](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#task-3-configure-file-server-connecting-windows-and-linux-samba)
 
@@ -85,7 +89,7 @@ cat linuxtest3.txt | sed 's/cow/computer/' > linuxtest4.txt
     - /proc/uptime
 - A screenshot of your login details (use grep)
 
-**TASK 2.1-2.6 & 2.2.1-2.2.2** <br>
+**TASK 2.1.1-2.1.6 & 2.2.1-2.2.2** <br>
 - Screenshots of the successful script execution for each task
 
 **TASK 3**
@@ -99,7 +103,7 @@ In order to complete this lab, you will need to have pre-configured a Linux and 
 
 The Lab Assignment on canvas gives step by step instructions for how to complete this task so I won't cover it here.
 
-## Task 2: Bash Shell Programming
+## Task 2.1: Bash Shell Programming
 
 Launch your Linux VM and open the terminal. Run the following commands to create a folder in your home directory and move into it:
 ```bash
@@ -108,7 +112,7 @@ ls #Always verify that the folder was created successfully before moving on
 cd Lab01
 ```
 
-### 2.1 Creating a Bash Script
+### 2.1.1 Creating a Bash Script
 
 Once you are in the Lab01 folder, you need to create your first script. First, you want to launch the nano editor by typing `nano hello.sh`. <br>
 This will create a file called hello.sh and open the nano editor with that file. Once you have nano open, type the following commands:
@@ -127,7 +131,7 @@ If the command was successful, you should see the output start with `-rwxrw-r-- 
 
 Run the script by typing `./hello.sh`. You should get an output saying `Hello world`.
 
-### 2.2 Creating a Simple Addition Script
+### 2.1.2 Creating a Simple Addition Script
 
 For this task, we will be creating a simple bash script that can add two numbers together.
 
@@ -149,7 +153,7 @@ When you are scripting with bash, you can push inputs to the function by putting
 
 Feel free to test the code with other numbers to see it's limits.
 
-### 2.3 Creating a File Creation Script
+### 2.1.3 Creating a File Creation Script
 
 In this exercise you are going to be creating a script that creates a file that is specified at runtime. We are going to do this using the `touch` command, which creates a file in Linux.
 
@@ -173,7 +177,7 @@ testfile
 ```
 Test the script again, this time creating a file called `testfile1`.
 
-### 2.4 Creating a Date File Script
+### 2.1.4 Creating a Date File Script
 
 In this exercise you are going to be creating a file whose name will be today's date in the format of ddmmyy.dat.
 
@@ -191,6 +195,9 @@ In this script, it is actually creating the file twice, using two seperate ways.
 
 Save and exit from Nano, then run the script. Check the directory to make sure the file is created.
 
+## Task 2.2: Troubleshooting Bash Scripts
+
+TBA
 
 ## Task 3: Configure File Server Connecting Windows and Linux (Samba)
 
