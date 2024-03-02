@@ -196,7 +196,7 @@ In this script, it is actually creating the file twice, using two seperate ways.
 
 Save and exit from Nano, then run the script. Check the directory to make sure the file is created.
 
-## Task 2.1.5: Adding Output & Reading Additional Inputs
+### Task 2.1.5: Adding Output & Reading Additional Inputs
 
 In this exercise, you will be creating a file like you did in 2.1.3, but this time you will be adding two additional features. The first will be adding the ability to ask the user to input additional variables, and the second will be to echo back when the file is successfully created.
 
@@ -211,7 +211,7 @@ echo "$FILENAME has been created"
 
 In this script, it is asking the user to add an additional input, then using the `read` command to create a variable called `FILENAME` containing a string with the additional input. Then it creates a file using said string and echos back to the command line that it has been created.
 
-Save and exit from Nano. Run the script and make sure to double check that the script successfully created the file.
+Save and exit from Nano. Run the script using whatever file name you want. Make sure to double check that the script successfully created the file.
 
 ## Task 2.2: Troubleshooting Bash Scripts
 
