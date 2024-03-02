@@ -13,7 +13,7 @@
 
 [Task 2.1: Bash Shell Programming](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#task-21-bash-shell-programming)
 
-[Task 2.2: Troubleshooting Bash Scripts](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#task-22-troubleshooting-bash-scripts  )
+[Task 2.2: Troubleshooting Bash Scripts](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#task-22-troubleshooting-bash-scripts)
 
 [Task 3: Configure File Server Connecting Windows and Linux (Samba)](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#task-3-configure-file-server-connecting-windows-and-linux-samba)
 
@@ -94,6 +94,9 @@ cat linuxtest3.txt | sed 's/cow/computer/' > linuxtest4.txt
 
 **TASK 3**
 - Screenshot of a successful connection between the Windows Server and Linux VM.
+
+**TASK 4**
+- TBA
 
 ## Prerequesites
 
@@ -189,11 +192,26 @@ FILENAME=`date +%d%b%y`.dat
 touch $FILENAME
 ```
 
-In this script, it is actually creating the file twice, using two seperate ways. In the first one, it is directly creating a file using touch and naming it by pulling the day(`%d`), month(`%b`), and year(`%y`) and combining them into a name. 
-
-[TO BE CONTINUED]
+In this script, it is actually creating the file twice, using two seperate ways. In the first one, it is directly creating a file using touch and naming it by pulling the day(`%d`), month(`%b`), and year(`%y`) and combining them into a name. In the second, it is creating a variable called `FILENAME` that is contains a string that was created by pulling the day(`%d`), month(`%b`), and year(`%y`) and combining them. It them creates a file and names it using the string in FILENAME.
 
 Save and exit from Nano, then run the script. Check the directory to make sure the file is created.
+
+## Task 2.1.5: Adding Output & Reading Additional Inputs
+
+In this exercise, you will be creating a file like you did in 2.1.3, but this time you will be adding two additional features. The first will be adding the ability to ask the user to input additional variables, and the second will be to echo back when the file is successfully created.
+
+Open nano yet again, creating a file called `creafile.sh`. Input the following code:
+```bash
+#!/bin/bash
+echo 'enter a file name:'
+read FILENAME
+touch $FILENAME
+echo "$FILENAME has been created"
+```
+
+In this script, it is asking the user to add an additional input, then using the `read` command to create a variable called `FILENAME` containing a string with the additional input. Then it creates a file using said string and echos back to the command line that it has been created.
+
+Save and exit from Nano. Run the script and make sure to double check that the script successfully created the file.
 
 ## Task 2.2: Troubleshooting Bash Scripts
 
