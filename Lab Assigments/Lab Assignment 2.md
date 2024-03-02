@@ -11,9 +11,9 @@
 
 [Task 1: Explore Linux Commands](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#task-1-explore-linux-commands)
 
-[Task 2.1: Bash Shell Programming](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#task-2.1-bash-shell-programming)
+[Task 2.1: Bash Shell Programming](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#task-21-bash-shell-programming)
 
-[Task 2.2: Troubleshooting Bash Scripts]()
+[Task 2.2: Troubleshooting Bash Scripts](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#task-22-troubleshooting-bash-scripts  )
 
 [Task 3: Configure File Server Connecting Windows and Linux (Samba)](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#task-3-configure-file-server-connecting-windows-and-linux-samba)
 
