@@ -213,6 +213,30 @@ In this script, it is asking the user to add an additional input, then using the
 
 Save and exit from Nano. Run the script using whatever file name you want. Make sure to double check that the script successfully created the file.
 
+### Task 2.1.6: For loops
+
+In this exercise, you will be using a for loop to read and echo all the users in a list of users. To do this we will create two files, `userlist` and `userscript.sh`.
+
+First, open nano and create the file `userlist`. Input the following list of users:
+```
+moe
+larry
+curly
+binny
+```
+Save and exit from Nano, then open it again and create `userscript.sh`. Input the following code:
+```bash
+#!/bin/bash
+for TheUSER in $(cat userlist)
+do
+    echo The user is $TheUSER
+done
+```
+
+In this code, it creates a variable called `TheUSER` that stores a string of whatever the current line is in userlist. It then echoes the string, and then checks if there is a line below the line it echoed. If so, it runs again, storing that line in `TheUSER`.
+
+Save and exit from nano, then run the script. Make sure you also run `cat userlist` to show that you created that file correctly as well.
+
 ## Task 2.2: Troubleshooting Bash Scripts
 
 TBA
