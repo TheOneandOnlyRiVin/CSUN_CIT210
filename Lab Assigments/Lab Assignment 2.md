@@ -196,7 +196,7 @@ In this script, it is actually creating the file twice, using two seperate ways.
 
 Save and exit from Nano, then run the script. Check the directory to make sure the file is created.
 
-### Task 2.1.5: Adding Output & Reading Additional Inputs
+### 2.1.5: Adding Output & Reading Additional Inputs
 
 In this exercise, you will be creating a file like you did in 2.1.3, but this time you will be adding two additional features. The first will be adding the ability to ask the user to input additional variables, and the second will be to echo back when the file is successfully created.
 
@@ -213,7 +213,7 @@ In this script, it is asking the user to add an additional input, then using the
 
 Save and exit from Nano. Run the script using whatever file name you want. Make sure to double check that the script successfully created the file.
 
-### Task 2.1.6: For loops
+### 2.1.6: For loops
 
 In this exercise, you will be using a for loop to read and echo all the users in a list of users. To do this we will create two files, `userlist` and `userscript.sh`.
 
@@ -239,7 +239,54 @@ Save and exit from nano, then run the script. Make sure you also run `cat userli
 
 ## Task 2.2: Troubleshooting Bash Scripts
 
->! test
+For this task, you will be given bash scripts that have errors in them. 
+
+I will have the correct code included in "details" but I suggest you try to solve the problems on your own beforehand, so you have a better understanding on the code.
+
+### 2.2.1: Input Sequencer
+
+Open nano and create a file called `inputsequencer.sh`.
+
+Fix the errors in this code and then input the correct code into the script:
+```
+#!/bin/bash
+mkir test
+cdtst
+echothis is file1" > file1
+sed's/1/2/ <file1 > file2
+cat > file3 << EOF
+this is file3
+EOF
+cdc..
+lst test >filetest
+```
+
+If you can't solve it, here is the corrected code:
+<details>
+
+```bash
+#!/bin/bash
+mkdir test
+cd test
+echo "this is file 1" > file1
+sed 's/1/2/' < file1 > file2
+cat > file3 << EOF
+this is file3
+EOF
+cd ..
+ls test > filetest
+```
+</details>
+
+Save and exit from nano, give the file run permissions, and make sure it works.
+
+### 2.2.2
+
+TBA
+
+### 2.2.3
+
+TBA
 
 
 ## Task 3: Configure File Server Connecting Windows and Linux (Samba)
