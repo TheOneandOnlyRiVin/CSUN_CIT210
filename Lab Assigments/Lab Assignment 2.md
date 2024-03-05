@@ -89,7 +89,7 @@ cat linuxtest3.txt | sed 's/cow/computer/' > linuxtest4.txt
     - /proc/uptime
 - A screenshot of your login details (use grep)
 
-**TASK 2.1.1-2.1.6 & 2.2.1-2.2.2** <br>
+**TASK 2.1.1-2.1.6 & 2.2.1-2.2.3** <br>
 - Screenshots of the successful script execution for each task
 
 **TASK 3**
@@ -239,7 +239,8 @@ Save and exit from nano, then run the script. Make sure you also run `cat userli
 
 ## Task 2.2: Troubleshooting Bash Scripts
 
-TBA
+>! test
+
 
 ## Task 3: Configure File Server Connecting Windows and Linux (Samba)
 
