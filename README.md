@@ -18,6 +18,8 @@ Follow these steps:
     1. Restart the affected VMs.
     1. If none of the above solve the issue, then reach out to the discord or shoot me a DM and I'll see what I can do to help you.
 - **"You made an error/there's missing information in your instructions."**<br>
-Good catch. Create a pull request with the changes on it and I'll buy you a beer.
+Good catch. Create a pull request with the changes on it.
 - **"I solved the lab a different way."**<br>
-Sweet. Type out your instructions on a .md file and upload it and I'll buy you two beers.
+Sweet. Type out your instructions on a .md file and either send it to me or upload it via a pull request.
+
+#### Love my work? Want to support me? Support my caffine addiction using the link [here](www.paypal.com/paypalme/YesthatRVincent).
