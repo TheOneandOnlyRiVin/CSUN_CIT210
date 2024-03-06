@@ -22,4 +22,4 @@ Good catch. Create a pull request with the changes on it.
 - **"I solved the lab a different way."**<br>
 Sweet. Type out your instructions on a .md file and either send it to me or upload it via a pull request.
 
-#### Love my work? Want to support me? Support my caffine addiction using the link [here](www.paypal.com/paypalme/YesthatRVincent).
+### Love my work? Want to support me? Support my caffine addiction using the link [here](https://www.paypal.com/paypalme/YesthatRVincent).
