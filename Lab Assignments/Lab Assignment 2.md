@@ -7,17 +7,17 @@
 ### *<b>Disclaimer</b>: For ease of understanding, I've changed Task 2 in the PDF to 2.1.*
 
 ### Table of Contents
-[Deliverables](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#deliverables)
+[Deliverables](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assignments/Lab%20Assignment%202.md#deliverables)
 
-[Task 1: Explore Linux Commands](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#task-1-explore-linux-commands)
+[Task 1: Explore Linux Commands](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assignments/Lab%20Assignment%202.md#task-1-explore-linux-commands)
 
-[Task 2.1: Bash Shell Programming](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#task-21-bash-shell-programming)
+[Task 2.1: Bash Shell Programming](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assignments/Lab%20Assignment%202.md#task-21-bash-shell-programming)
 
-[Task 2.2: Troubleshooting Bash Scripts](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#task-22-troubleshooting-bash-scripts)
+[Task 2.2: Troubleshooting Bash Scripts](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assignments/Lab%20Assignment%202.md#task-22-troubleshooting-bash-scripts)
 
-[Task 3: Configure File Server Connecting Windows and Linux (Samba)](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#task-3-configure-file-server-connecting-windows-and-linux-samba)
+[Task 3: Configure File Server Connecting Windows and Linux (Samba)](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assignments/Lab%20Assignment%202.md#task-3-configure-file-server-connecting-windows-and-linux-samba)
 
-[Task 4: Disks and Volumes (Windows Server)](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assigments/Lab%20Assignment%202.md#task-4-disks-and-volumes-windows-server)
+[Task 4: Disks and Volumes (Windows Server)](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assignments/Lab%20Assignment%202.md#task-4-disks-and-volumes-windows-server)
 
 ## Deliverables
 
@@ -243,9 +243,11 @@ For this task, you will be given bash scripts that have errors in them.
 
 I will have the correct code included in "details" but I suggest you try to solve the problems on your own beforehand, so you have a better understanding on the code.
 
-### 2.2.1: Input Sequencer
+### 2.2.1: > and >>
 
-Open nano and create a file called `inputsequencer.sh`.
+In this exercise, you are trying to create a script that will create an input file, then use the contents of that file to create two more files. 
+
+Open nano and create a file called `inputoutput.sh`.
 
 Fix the errors in this code and then input the correct code into the script:
 ```
@@ -261,7 +263,7 @@ cdc..
 lst test >filetest
 ```
 
-If you can't solve it, here is the corrected code:
+If you can't solve it, here is the corrected code and an explanation:
 <details>
 
 ```bash
@@ -276,13 +278,15 @@ EOF
 cd ..
 ls test > filetest
 ```
+
+In this code, you are first saving the string "this is file 1" to file1 using the `>` command. 
 </details>
 
 Save and exit from nano, give the file run permissions, and make sure it works.
 
-### 2.2.2
+### 2.2.2: Using the Read & Delete Commands
 
-TBA
+
 
 ### 2.2.3
 
