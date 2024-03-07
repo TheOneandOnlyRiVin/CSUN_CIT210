@@ -328,9 +328,54 @@ In this code you are doing the following:
 
 Save and exit from nano. Create a file called "deleteme" and then run the script to delete said file. Make sure you use the `ls` command to verify that the file was created & then deleted.
 
-### 2.2.3
+### 2.2.3: Adding Users
 
-TBA
+```
+#!/bin/bash
+#
+#Themkuser script was written by Dhillon
+# to make my life a little easier
+#
+print "This program will add a new user.""
+print "Type exit to quit"
+echo -nn "Enter a new username:"
+read name
+while [$names != "exit"] as ;
+does
+usrad -d /home/$name -s/bin/bash $name
+passwordd $name
+echo -n "Type exit to quit or Enter a new username
+readnaeme
+do
+exit
+```
+If you don't know how to solve it, here is the correct code:
+<details>
+
+```bash
+#!/bin/bash
+echo "This program will add a new user."
+echo "Type 'exit' to quit"
+
+echo -n "Enter a new username: "
+read name
+
+if [ "$name" == "exit" ]; then
+    exit
+fi
+
+while true; do
+    useradd -d "/home/$name" -s "/bin/bash" "$name"
+    passwd "$name"
+
+    echo -n "Type 'exit' to quit or Enter a new username: "
+    read name
+    if [ "$name" == "exit" ]; then
+        exit
+    fi
+done
+```
+</details>
 
 
 ## Task 3: Configure File Server Connecting Windows and Linux (Samba)
