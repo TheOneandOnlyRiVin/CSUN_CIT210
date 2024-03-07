@@ -241,7 +241,7 @@ Save and exit from nano, then run the script. Make sure you also run `cat userli
 
 For this task, you will be given bash scripts that have errors in them. 
 
-I will have the correct code included in "details" but I suggest you try to solve the problems on your own beforehand, so you have a better understanding on the code.
+I will have the correct code included in "details" but I suggest you try to solve the problems on your own beforehand, so you have a better understanding of the code.
 
 ### 2.2.1: > and >>
 
