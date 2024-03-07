@@ -297,7 +297,7 @@ Save and exit from nano, and make sure the script works.
 
 ### 2.2.2: Using the Read & Delete Commands
 
-In this exercise, you are trying to create a script that deletes a file that the user specifies at runtime. 
+In this exercise, you are trying to create a script that deletes a file that the user specifies during execution. 
 
 Open nano again, this time creating a file called `remover.sh`.
 
@@ -330,6 +330,11 @@ Save and exit from nano. Create a file called "deleteme" and then run the script
 
 ### 2.2.3: Adding Users
 
+In this exercise, you are trying to create a script that will create usernames and password that are defined during execution.
+
+Open nano and create a file called `themkuser.sh`.
+
+Fix the below code and insert it into the editor:
 ```
 #!/bin/bash
 #
@@ -376,7 +381,15 @@ while true; do
 done
 ```
 </details>
+Save & exit nano, then run the script. Using the script, create two users with the following usernames and passwords:
 
+```
+Username: labuser1
+Password: N0rthridge
+
+Username: labuser2
+Password: 3SUNLabs
+```
 
 ## Task 3: Configure File Server Connecting Windows and Linux (Samba)
 
