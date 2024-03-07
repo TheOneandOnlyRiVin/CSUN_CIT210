@@ -279,7 +279,18 @@ cd ..
 ls test > filetest
 ```
 
-In this code, you are first saving the string "this is file 1" to file1 using the `>` command. 
+In this code, you are doing the following:
+- creating a directory called test and switching into it
+- creating a file called "file1"
+- inserting the output of the command `echo "this is file 1"` into file1
+- creating a file called "file2"
+- copying the contents of file1 onto file2 while using the stream editor `sed` command to change all instances of the character "1" to "2"
+- creating a file called "file3"
+- creating a here document(temporary file) called EOF containing the string "this is file3"
+- inserting the output of the command `cat EOF` into file3
+- switching back to the original directory
+- creating a file called "filetest"
+- inserting the output of `ls test` into filetest
 </details>
 
 Save and exit from nano, give the file run permissions, and make sure it works.
