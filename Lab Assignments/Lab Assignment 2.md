@@ -293,11 +293,40 @@ In this code, you are doing the following:
 - inserting the output of `ls test` into filetest
 </details>
 
-Save and exit from nano, give the file run permissions, and make sure it works.
+Save and exit from nano, and make sure the script works.
 
 ### 2.2.2: Using the Read & Delete Commands
 
+In this exercise, you are trying to create a script that deletes a file that the user specifies at runtime. 
 
+Open nano again, this time creating a file called `remover.sh`.
+
+Here is the incorrect code. Find and fix the errors in it, then input the corrected code into the editor:
+```
+!/bin/bash
+echo 'Please enter the name of the file to delete:'
+readlinedelfiles
+rmove $delfile
+echo $delfile Deleted
+```
+If you can't solve it, here is the corrected code and an explanation:
+<details>
+
+```bash
+#!/bin/bash
+echo "Please enter the name of the file to be deleted:"
+read delfile
+rm $delfile
+echo $delfile deleted
+```
+In this code you are doing the following:
+- echoing "Please enter the name of the file to be deleted" to the CLI
+- using the `read` command to take what the user inputed and store it in the newly created variable "delfile"
+- using the `rm` command to remove the file with the name stored in delfile
+- echoing that the file was deleted to the CLI
+</details>
+
+Save and exit from nano. Create a file called "deleteme" and then run the script to delete said file. Make sure you use the `ls` command to verify that the file was created & then deleted.
 
 ### 2.2.3
 
