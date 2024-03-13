@@ -14,7 +14,8 @@ Going to leave this section blank for now since I'm assuming everyone knows how 
 - Windows Server 2022 (Evaluation edition) > [.iso](https://go.microsoft.com/fwlink/p/?LinkID=2195280&clcid=0x409&culture=en-us&country=US)
 - Ubuntu > [.iso](https://ubuntu.com/download/desktop/thank-you?version=22.04.4&architecture=amd64) 
 
-*<b>NOTE</b>: You only need to configure a Windows Server VM and a Linux machine, you don't need to configure a Windows 10/11 machine.*
+> [!NOTE]
+> You only need to configure a Windows Server VM and a Linux machine, you don't need to configure a Windows 10/11 machine.
 
 ## Task 3: Configuring IPv4 Addresses & Connecting Linux & Windows Machines
 
@@ -34,7 +35,8 @@ In order to connect the VMs together, you need to make sure they are all on the 
 
 Before you can ping the windows server, you need to create a rule to allow ICMP (Internet Control Message Protocols) ping requests to go through. In order to do that, you need to open the powershell command line as an administrator and type in the following commands: 
 
-*<b>REMINDER</b>: Whenever you access powershell to make changes to the system, make sure you launch it as an administrator (if you installed Windows Server as CLI-only it will auto-launch powershell as an admin)*
+> [!IMPORTANT]
+> Whenever you access powershell to make changes to the system, make sure you launch it as an administrator (if you installed Windows Server as CLI-only it will auto-launch powershell as an admin)
 ```powershell
 netsh 
 advfirewall firewall 
