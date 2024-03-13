@@ -4,7 +4,8 @@
 
 [PDF Download](https://canvas.csun.edu/courses/150468/files/24362831?wrap=1)
 
-### *<b>Disclaimer</b>: For ease of understanding, I've changed Task 2 in the PDF to 2.1.*
+> [!IMPORTANT]
+> For ease of understanding, I've changed Task 2 in the PDF to 2.1.
 
 ### Table of Contents
 [Deliverables](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assignments/Lab%20Assignment%202.md#deliverables)
@@ -101,6 +102,9 @@ cat linuxtest3.txt | sed 's/cow/computer/' > linuxtest4.txt
 ## Prerequesites
 
 In order to complete this lab, you will need to have pre-configured a Linux and Windows Server VM. These instructions are written with the assumption that you have the same Windows Server & Linux machines you used for the last lab. 
+
+> [!CAUTION]
+> If you have to set up a new VM for this lab please go back through Lab 1 and install all the software/cofnigure the settings like you did before, otherwise you will run into errors.
 
 ## Task 1: Explore Linux Commands 
 
@@ -397,6 +401,7 @@ TBA
 
 ## Task 4: Disks and Volumes (Windows Server)
 
-*<b>NOTE</b>: These instructions are for using the powershell-only version of Windows Server. If you want to use the GUI-version, the PDF has step-by-step instructions for how to complete it.*
+> [!NOTE]
+> These instructions are for using the powershell-only version of Windows Server. If you want to use the GUI-version, the PDF has step-by-step instructions for how to complete it.*
 
 TBA
