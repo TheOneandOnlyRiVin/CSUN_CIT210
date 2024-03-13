@@ -1,12 +1,12 @@
 # Markdown Cheat Sheet
 
-Thanks for visiting [The Markdown Guide](https://www.markdownguide.org)!
+[The Markdown Guide](https://www.markdownguide.org)!
 
-This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements. It can’t cover every edge case, so if you need more information about any of these elements, refer to the reference guides for [basic syntax](https://www.markdownguide.org/basic-syntax) and [extended syntax](https://www.markdownguide.org/extended-syntax).
+This Markdown cheat sheet was originally created by [The Markdown Guide](https://www.markdownguide.org)! but has since been updated & expanded upon by yours truly. It provides a quick overview of all the Markdown syntax elements. It can’t cover every edge case, so if you need more information about any of these elements, refer to the reference guides for [basic syntax](https://www.markdownguide.org/basic-syntax) and [extended syntax](https://www.markdownguide.org/extended-syntax).
 
 ## Basic Syntax
 
-These are the elements outlined in John Gruber’s original design document. All Markdown applications support these elements.
+All Markdown applications support these elements.
 
 ### Heading
 
@@ -48,7 +48,21 @@ These are the elements outlined in John Gruber’s original design document. All
 
 ### Link
 
+#### External Link
+
 [Markdown Guide](https://www.markdownguide.org)
+
+#### Internal Link
+
+[Link](filepath)
+
+#### Internal Heading Link
+
+[Heading](#Heading)
+
+#### External Heading Link
+
+[Link](My%20Document#Heading)
 
 ### Image
 
@@ -117,3 +131,20 @@ H~2~O
 ### Superscript
 
 X^2^
+
+### Alerts
+
+> [!NOTE]  
+> Highlights information that users should take into account, even when skimming.
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!IMPORTANT]  
+> Crucial information necessary for users to succeed.
+
+> [!WARNING]  
+> Critical content demanding immediate user attention due to potential risks.
+
+> [!CAUTION]
+> Negative potential consequences of an action.
