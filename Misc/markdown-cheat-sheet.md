@@ -32,6 +32,12 @@ All Markdown applications support these elements.
 2. Second item
 3. Third item
 
+(In some applications MD will automatically number things for you)
+
+1. First item
+1. Second item
+1. Third item
+
 ### Unordered List
 
 - First item
