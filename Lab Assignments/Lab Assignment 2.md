@@ -397,7 +397,71 @@ Password: 3SUNLabs
 
 ## Task 3: Configure File Server Connecting Windows and Linux (Samba)
 
-TBA
+### Step 1: Installing Samba
+
+Launch your Linux VM. Open the terminal and run the following commands:
+```bash
+sudo apt update
+sudo apt upgrade -y
+sudo apt install samba -y
+whereis samba
+```
+If you have successfully installed samba, you should see the below output:
+```
+samba: /usr/sbin/samba /usr/lib/x86_64-linux-gnu/samba /etc/samba /usr/share/samba /usr/share/man/man8/samba.8.gz /usr/share/man/man7/samba.7.gz
+```
+
+### Step 2: Configuring Samba
+
+In order to configure Samba, we first need to create a directory for it to share. Run the below commands:
+```bash
+mkdir /home/<username>/sambashare/
+cd /home/<username>
+ls # always verify that the folder is created before continuing
+```
+In order to share the folder, we need to modify the Samba .conf file. To do that, open it in nano using the below command:
+```bash
+sudo nano /etc/samba/smb.conf
+```
+At the bottom of the .conf file, add the below text:
+```
+[sambashare]
+    comment = Samba on Ubuntu
+    path = /home/<username>/sambashare
+    read only = no
+    browsable = yes
+    guest ok = yes
+    create mask = 0755
+```
+Save and exit from Nano, then run the below commands to finalize the samba configuration:
+```bash
+sudo service smbd restart # restarts the samba service
+sudo ufw allow samba # configures the firewall to allow samba traffic
+```
+
+### Step 3: Connecting to Samba
+
+#### Creating a Samba Password
+
+Samba doesn't use the same password as a regular user, but a special samba password. In the Linux terminal, run the below command and follow the prompt:
+```bash
+sudo smbpasswd -a <username>
+```
+> [!TIP]
+> <username> doesn't have to be your username. You can use one of the accounts you created in [Exercise 2.2.3](###2.2.3:%20Adding%20Users).
+
+`SambaT1me`
+
+#### Connecting your Windows Server to Samba (incomplete)
+
+> [!INFO]
+> In order to connect your Windows Server to Samba you will need the IP address for your linux vm. If you don't have it, you can get it by typing in `ifconfig` in the terminal.
+
+Now it's time to connect your Windows Server to 
+```powershell
+ping <linux-ip>
+New-Item -ItemType SymbolicLink -Path ".\MyDocuments" -Target "\\<linux-ip>\sambashare"
+```
 
 ## Task 4: Disks and Volumes (Windows Server)
 
