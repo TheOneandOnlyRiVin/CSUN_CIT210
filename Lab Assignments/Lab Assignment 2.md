@@ -35,8 +35,8 @@ cat linuxtest3.txt | sed 's/cow/computer/' > linuxtest4.txt
 
 **TASK 1.2** <br>
 - The output of the following bash commands:
-    - `ls-a>listing`
-    - `cat listing | les`
+    - `ls -a > listing`
+    - `cat listing | less`
 
 **TASK 1.4** <br>
 - The output of the following bash commands:
@@ -44,7 +44,19 @@ cat linuxtest3.txt | sed 's/cow/computer/' > linuxtest4.txt
     - `where is chmod`
 
 **TASK 1.5** <br>
-- The permissions of the file working.txt both before and after changing the permissions. 
+- The output of the following bash commands:
+```bash
+echo "test file" > working.txt
+ls -l working.txt
+chmod 444 working.txt
+ls -l working.txt
+chmod o+w working.txt
+ls -l working.txt
+chmod u-r working.txt
+ls -l working.txt
+chmod 777 working.txt
+ls -l working.txt
+```
 - An explanation of the following bash commands:
     - `chmod o+w working.txt`
     - `chmod u-r working.txt`
@@ -397,6 +409,9 @@ Password: 3SUNLabs
 
 ## Task 3: Configure File Server Connecting Windows and Linux (Samba)
 
+> [!CAUTION]
+> The instruction for Task 3 are incomplete. There may be errors or partial information. Proceed at your own risk.
+
 ### Step 1: Installing Samba
 
 Launch your Linux VM. Open the terminal and run the following commands:
@@ -441,6 +456,27 @@ sudo ufw allow samba # configures the firewall to allow samba traffic
 
 ### Step 3: Connecting to Samba
 
+#### Installing WSDD
+
+```bash
+sudo apt install wsdd
+sudo systemctl status wsdd.service
+```
+
+```
+● wsdd.service - Web Services Dynamic Discovery host daemon
+     Loaded: loaded (/etc/systemd/system/wsdd.service; enabled; vendor preset: enabled)
+     Active: active (running) since Wed 2020-06-10 10:51:39 CEST; 8s ago
+   Main PID: 40670 (python3)
+      Tasks: 1 (limit: 6662)
+     Memory: 10.8M
+     CGroup: /system.slice/wsdd.service
+             └─40670 python3 /usr/bin/wsdd --shortlog
+
+jun 10 10:51:39 ubuntu systemd[1]: Started Web Services Dynamic Discovery host daemon.
+jun 10 10:51:40 ubuntu wsdd[40670]: WARNING: no interface given, using all interfaces
+```
+
 #### Creating a Samba Password
 
 Samba doesn't use the same password as a regular user, but a special samba password. In the Linux terminal, run the below command and follow the prompt:
@@ -450,22 +486,19 @@ sudo smbpasswd -a <username>
 > [!TIP]
 > <username> doesn't have to be your username. You can use one of the accounts you created in [Exercise 2.2.3](###2.2.3:%20Adding%20Users).
 
-`SambaT1me`
+#### Connecting your Windows Server to Samba
 
-#### Connecting your Windows Server to Samba (incomplete)
+> [!WARNING]
+> This section requires use of the Windows GUI. If you have the CLI-only version of Windows Server 2022, these instructions will not be able to help you.
 
 > [!INFO]
-> In order to connect your Windows Server to Samba you will need the IP address for your linux vm. If you don't have it, you can get it by typing in `ifconfig` in the terminal.
+> In order to connect your Windows Server to Samba you will need the IP address for your linux vm.
 
-Now it's time to connect your Windows Server to 
-```powershell
-ping <linux-ip>
-New-Item -ItemType SymbolicLink -Path ".\MyDocuments" -Target "\\<linux-ip>\sambashare"
-```
+TODO:
+1. Enable insecure guest logons in LGPE
+1. Map network drive to \\<ip>\sambashare
+    Make drive letter S
 
 ## Task 4: Disks and Volumes (Windows Server)
-
-> [!NOTE]
-> These instructions are for using the powershell-only version of Windows Server. If you want to use the GUI-version, the PDF has step-by-step instructions for how to complete it.*
 
 TBA
