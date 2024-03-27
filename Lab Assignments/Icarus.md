@@ -28,6 +28,7 @@ netsh advfirewall firewall
 add rule name="Allow ICMPv4 Requests" protocol=icmpv4:8,any dir=in action=allow
 ```
 Press Ctrl+C, then ping your Linux VM to make sure everything is set up successfully.
+Press Ctrl+C, then ping your Linux VM to make sure everything is set up successfully.
 
 ## Ubuntu VM
 
