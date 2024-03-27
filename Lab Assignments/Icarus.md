@@ -6,7 +6,7 @@ This is a step-by-step instruction guide for recreating your VM incase you need 
 
 ### Initial Set-up
 
-1. Download the Windows Server 2022 Evaluation edition iso [here](https://go.microsoft.com/fwlink/p/?LinkID=2195280&clcid=0x409&culture=en-us&country=US).
+1. Download the Windows Server 2022 Evaluation edition iso [here](https://go.microsoft.com/fwlink/p/?LinkID=2195280&clcid=0x409&culture=en-us&country=US)
 1. Check "skip unattended installation" and then click next
 1. Set the memory to 4096 mb or higher & the processors to 8 or higher and then click next
 1. Set the Disk Size to 32GB or higher and then click next > finish
@@ -34,10 +34,26 @@ Press Ctrl+C, then ping your Linux VM to make sure everything is set up successf
 
 ### Initial Set-Up
 
-TBA
+1. Download the Ubuntu [here](https://ubuntu.com/download/desktop/thank-you?version=22.04.4&architecture=amd64)
+1. Check "skip unattended installation" and then click next
+1. Set the memory to 4096 mb or higher & the processors to 4 or higher and then click next
+1. Set the Disk Size to 20GB or higher and then click next > finish
+1. Launch the VM & follow the instructions on screen to begin setup.
+
+While the VM installs the OS, go back to VirtualBox. Click on your VM then select Settings > Network > Adapter 1 and set "Attached to:" to NAT Network
+
+Once the installation is finished, create an user password and log in. Once you have logged in you need to elevate your account to admin. In order to do that you open a terminal and type in the following code.
+```bash
+su root
+nano /etc/sudoers
+```
+then add the following text at the bottom next to the admin user:
+```
+<username> ALL=(ALL)   ALL
+```
 
 ### Lab 2
 
 To bring your VM up to spec for lab 2, input the following bash commands:
 
-TBA
+TODO: Insert Bash Commands
