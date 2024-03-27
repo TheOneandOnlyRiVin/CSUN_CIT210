@@ -9,7 +9,7 @@ This is a step-by-step instruction guide for recreating your VM incase you need 
 1. Download the Windows Server 2022 Evaluation edition iso [here](https://go.microsoft.com/fwlink/p/?LinkID=2195280&clcid=0x409&culture=en-us&country=US).
 1. Check "skip unattended installation" and then click next
 1. Set the memory to 4096 mb or higher & the processors to 8 or higher and then click next
-1. Set the Disk Size to 16GB or higher and then click next > finish
+1. Set the Disk Size to 32GB or higher and then click next > finish
 1. Launch the VM
 1. Click next > install now
 1. Select "Windows Server 2022 Standard Evaluation (Desktop Expirence)" and then click next
@@ -27,14 +27,7 @@ To bring your VM up to spec for lab 2, input the following powershell commands:
 netsh advfirewall firewall 
 add rule name="Allow ICMPv4 Requests" protocol=icmpv4:8,any dir=in action=allow
 ```
-Press Ctrl+C, then enter the following commands:
-```powershell
-Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
-Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
-Start-Service sshd
-Set-Service sshd -StartupType 'Automatic'
-```
-Ping your Linux VM to make sure everything is set up successfully.
+Press Ctrl+C, then ping your Linux VM to make sure everything is set up successfully.
 
 ## Ubuntu VM
 
