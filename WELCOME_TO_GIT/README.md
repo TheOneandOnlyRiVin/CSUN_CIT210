@@ -35,12 +35,12 @@ Now for the important commands "git add" ,"git status","git commit -m 'write a n
   - BEFORE ANYTHING TYPE: "git pull" (then press "enter")
   - If it says everything is "up-to-date"
   - we can move on
-'''bash
+```
     git pull
     git add filename.txt
     git commit -m 'leave a message '
     git push
-'''
+```
 
   - When we try and make changes to are .md, .txt., or some other file we have to make sure that the computer is tracking the file, for this we use the command 'git add FILENAME'
 
