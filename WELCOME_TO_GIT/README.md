@@ -1,4 +1,4 @@
-# CIT160L
+# CIT210
 This github project is for helping are team better communicate through the semester. Github is a code hosting platform for version control and collaboration. To get started using this resource we have to do a couple of things :
 - First you need to download [Git](https://git-scm.com/downloads).
 - Then you need to [setup git](https://www.youtube.com/watch?v=7BOrUHFu44A) for whichever OP system you are using.
