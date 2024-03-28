@@ -12,6 +12,10 @@ Hello everyone! My name is RiVin. I created this repo because I wasn't satisfied
 
 ## FAQ
 
+> How do I contribute to the GitHub
+
+There is a great guide [here](GitHub%20Setup) that covers how to configure your GitHub as well as basic commands.
+
 > "I'm running into an error while working on the lab, what should I do?"
 
 Follow these steps:
