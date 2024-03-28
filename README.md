@@ -14,7 +14,7 @@ Hello everyone! My name is RiVin. I created this repo because I wasn't satisfied
 
 > How do I contribute to the GitHub
 
-There is a great guide [here](GitHub%20Setup) that covers how to configure your GitHub as well as basic commands.
+There is a great guide [here](Misc/GitHub%20Setup.md) that covers how to configure your GitHub as well as basic commands.
 
 > "I'm running into an error while working on the lab, what should I do?"
 
