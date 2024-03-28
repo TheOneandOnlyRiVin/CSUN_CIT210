@@ -8,17 +8,17 @@
 > For ease of understanding, I've changed Task 2 in the PDF to 2.1.
 
 ### Table of Contents
-[Deliverables](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assignments/Lab%20Assignment%202.md#deliverables)
+[Deliverables](#deliverables)
 
-[Task 1: Explore Linux Commands](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assignments/Lab%20Assignment%202.md#task-1-explore-linux-commands)
+[Task 1: Explore Linux Commands](#task-1-explore-linux-commands)
 
-[Task 2.1: Bash Shell Programming](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assignments/Lab%20Assignment%202.md#task-21-bash-shell-programming)
+[Task 2.1: Bash Shell Programming](#task-21-bash-shell-programming)
 
-[Task 2.2: Troubleshooting Bash Scripts](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assignments/Lab%20Assignment%202.md#task-22-troubleshooting-bash-scripts)
+[Task 2.2: Troubleshooting Bash Scripts](#task-22-troubleshooting-bash-scripts)
 
-[Task 3: Configure File Server Connecting Windows and Linux (Samba)](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assignments/Lab%20Assignment%202.md#task-3-configure-file-server-connecting-windows-and-linux-samba)
+[Task 3: Configure File Server Connecting Windows and Linux (Samba)](#task-3-configure-file-server-connecting-windows-and-linux-samba)
 
-[Task 4: Disks and Volumes (Windows Server)](https://github.com/TheOneandOnlyRiVin/CSUN_CIT210/blob/main/Lab%20Assignments/Lab%20Assignment%202.md#task-4-disks-and-volumes-windows-server)
+[Task 4: Disks and Volumes (Windows Server)](#task-4-disks-and-volumes-windows-server)
 
 ## Deliverables
 
@@ -106,17 +106,21 @@ ls -l working.txt
 - Screenshots of the successful script execution for each task
 
 **TASK 3**
-- Screenshot of a successful connection between the Windows Server and Linux VM.
+- Screenshot of a successful connection between the Windows Server and Samba share.
 
 **TASK 4**
-- TBA
+- Screenshot of the following:
+    - A successful conversion of an MBR partition to a GPT partition
+    - Your created VHD drive
+    - Your shared drive
+    - <!-- TODO: Add last screenshot -->
 
 ## Prerequesites
 
 In order to complete this lab, you will need to have pre-configured a Linux and Windows Server VM. These instructions are written with the assumption that you have the same Windows Server & Linux machines you used for the last lab. 
 
 > [!CAUTION]
-> If you have to set up a new VM for this lab please go back through [Lab Assignment 1](Lab%20Assignment%201) and install all the software/cofnigure the settings like you did before, otherwise you will run into errors.
+> If you have to set up a new VM for this lab please go see [Icarus], which is a reference file I've created that should help with set-up.
 
 ## Task 1: Explore Linux Commands 
 
@@ -484,21 +488,114 @@ Samba doesn't use the same password as a regular user, but a special samba passw
 sudo smbpasswd -a <username>
 ```
 > [!TIP]
-> <username> doesn't have to be your username. You can use one of the accounts you created in [Exercise 2.2.3](###2.2.3:%20Adding%20Users).
+> <username> doesn't have to be your username. You can use one of the accounts you created in [Exercise 2.2.3](#2.2.3:-Adding-Users).
 
 #### Connecting your Windows Server to Samba
 
 > [!WARNING]
 > This section requires use of the Windows GUI. If you have the CLI-only version of Windows Server 2022, these instructions will not be able to help you.
 
-> [!INFO]
-> In order to connect your Windows Server to Samba you will need the IP address for your linux vm.
+> [!NOTE]
+> In order to connect your Windows Server to Samba you will need the IP address for your Linux vm.
 
-TODO:
+<!-- TODO: Complete instructions-->
+
 1. Enable insecure guest logons in LGPE
 1. Map network drive to \\<ip>\sambashare
     Make drive letter S
 
 ## Task 4: Disks and Volumes (Windows Server)
 
-TBA
+### Adding a Second Disk
+
+In order to convert the disk, we first need to create a second disk to play around with. In order to complete that, you need to complete the following steps:
+
+1. Tab over to Virtual Box and select your Windows VM and then settings.
+1. Go to storage > Controller: SATA > Adds hard disk > Create
+1. Select Virtual Hard Disk then click next & next again
+1. Select a minimum of 4 GB for the size and select finish
+1. Select the new VHD from the list and click Choose
+
+### Converting a Disk from MBR to GPT (GUI)
+
+> [!WARNING]
+> This section requires use of the Windows GUI. If you are using the CLI only version of Windows Server 2022, skip to [here](#Converting%20a%20Disk%20from%20MBR%20to%20GPT%20(Powershell)).
+
+<!-- TODO: Define MBR & GPT -->
+
+1. Right-Click on the start button and select "Disk Management"
+1. Right-Click on disk 1 and select "Convert to GPT Disk"
+
+You have now successfully converted your disk to GPT.
+
+### Converting a Disk from MBR to GPT (Powershell)
+
+> [!NOTE]
+> If you completed the instructions in the above section, skip this section.
+
+<!-- TODO: Define MBR & GPT -->
+
+In order to convert your new disk to GPT, launch powershell as an admin and run the following commands:
+```powershell
+diskpart
+list disk
+select disk 1
+clean
+convert gpt
+```
+You have now successfully converted your disk to GPT.
+
+<!-- REFERENCES:
+Disk 1 Size: 4078 MB
+Disk 2 Size: 1006 MB
+-->
+
+### Creating VHD & VHDX Files (GUI)
+
+> [!WARNING]
+> This section requires use of the Windows GUI. If you are using the CLI only version of Windows Server 2022, skip to [here](#Creating-VHD-&-VHDX-Files-(Powershell)).
+
+<!-- TODO: Define VHD & VHDX -->
+
+#### Creating a VHD
+
+In order to create a VHD, we are going to launch Server Manager. Once it is launched, do the following:
+1. Select tools > computer management > disk management
+1. Right click on the unallocated space on Disk 1 and select "Create Simple Volume"
+1. Make sure the drive letter is E and then click next
+1. Rename the Volume Label to "Lab Volume", click next, and then click finish 
+1. Making sure the new Volume is selected, go to the top bar and select actions > create VHD
+1. Make sure the following values are set in the pop-up window and then click okay:
+    * Location: E:\Lab02VHD.vhd
+    * Virtual Hard Disk Size: 1 GB
+    * Virtual Hard Disk Format: VHD
+    * Virtual Hard Disk Type: Dynamically expanding
+1. Right click on the new disk (disk 2) and then select Initialize Disk
+1. Select GPT and then select ok
+1. Right click on the unallocated space in disk 2 and select "New simple volume"
+1. Select next > next
+1. Assign the drive letter F & select next
+1. Rename the Volume label to "Lab VHD" and then select next > finish
+
+### Creating VHD & VHDX Files (Powershell)
+
+> [!NOTE]
+> If you completed the instructions in the above section, skip this section.
+
+<!-- TODO: Define VHD & VHDX & List Powershell Commands -->
+
+### Creating SMB & NFS Shares
+
+> [!WARNING]
+> This section requires use of the Windows GUI.
+
+<!-- TODO: Define SMB & NFS -->
+
+In order to create an SMB share, you will need to launch Server Manager and do the following:
+1. Select File & Storage Services > Volumes > E
+1. Scroll down to Shares and select "Start the Add Roles and Features Wizard"
+1. Once the window pops up, click next > next > install and wait for the window to finish installing.
+1. Once it's finished, go back to shares and select tasks > new share
+1. Make sure "SMB Share - Quick" is selected and then select next
+1. Select E: and then click next
+1. Named the share "LabShare", then click next > next > next > create
