@@ -120,7 +120,7 @@ ls -l working.txt
 In order to complete this lab, you will need to have pre-configured a Linux and Windows Server VM. These instructions are written with the assumption that you have the same Windows Server & Linux machines you used for the last lab. 
 
 > [!CAUTION]
-> If you have to set up a new VM for this lab please go see [Icarus], which is a reference file I've created that should help with set-up.
+> If you have to set up a new VM for this lab please go see [Icarus](Icarus.md), which is a reference file I've created that should help with set-up.
 
 ## Task 1: Explore Linux Commands 
 
