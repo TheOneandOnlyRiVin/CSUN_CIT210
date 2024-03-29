@@ -22,7 +22,7 @@
 
 ## Deliverables
 
-At the end of this assignment, you will be turning in a word doc containing the following:
+At the end of this assignment, you will be turning in a Word doc containing the following:
 
 **TASK 1** <br>
 - The output of the following bash commands:
@@ -413,12 +413,15 @@ Password: 3SUNLabs
 
 ## Task 3: Configure File Server Connecting Windows and Linux (Samba)
 
-> [!CAUTION]
-> The instruction for Task 3 are incomplete. There may be errors or partial information. Proceed at your own risk.
+Samba is a software implementation of the SMB protocol that allows Windows clients to connect to non-windows clients for the purposes of file-sharing and printing. In this task, we are going to be using it to set up a file-sharing server on our Linux VM that we will then connect to on our Windows VM.
+
+Want to learn more about Samba? Go to their website [here](https://www.samba.org/samba/what_is_samba.html).
 
 ### Step 1: Installing Samba
 
-Launch your Linux VM. Open the terminal and run the following commands:
+1. Go to virtual box and click on your linux VM
+1. Go to settings > network > adapter 1 and make sure it is set to NAT
+3. Open the terminal on your linux machine and run the following commands:
 ```bash
 sudo apt update
 sudo apt upgrade -y
@@ -429,10 +432,11 @@ If you have successfully installed samba, you should see the below output:
 ```
 samba: /usr/sbin/samba /usr/lib/x86_64-linux-gnu/samba /etc/samba /usr/share/samba /usr/share/man/man8/samba.8.gz /usr/share/man/man7/samba.7.gz
 ```
+Once Samba is installed, go back to the adapter 1 settings and switch it back to the NAT Network.
 
 ### Step 2: Configuring Samba
 
-In order to configure Samba, we first need to create a directory for it to share. Run the below commands:
+In order to configure Samba, we first need to create a directory for it to share. Run the below commands in your Linux terminal:
 ```bash
 mkdir /home/<username>/sambashare/
 cd /home/<username>
@@ -445,12 +449,10 @@ sudo nano /etc/samba/smb.conf
 At the bottom of the .conf file, add the below text:
 ```
 [sambashare]
-    comment = Samba on Ubuntu
+    comment = Samba File Server
     path = /home/<username>/sambashare
     read only = no
     browsable = yes
-    guest ok = yes
-    create mask = 0755
 ```
 Save and exit from Nano, then run the below commands to finalize the samba configuration:
 ```bash
@@ -460,26 +462,7 @@ sudo ufw allow samba # configures the firewall to allow samba traffic
 
 ### Step 3: Connecting to Samba
 
-#### Installing WSDD
-
-```bash
-sudo apt install wsdd
-sudo systemctl status wsdd.service
-```
-
-```
-● wsdd.service - Web Services Dynamic Discovery host daemon
-     Loaded: loaded (/etc/systemd/system/wsdd.service; enabled; vendor preset: enabled)
-     Active: active (running) since Wed 2020-06-10 10:51:39 CEST; 8s ago
-   Main PID: 40670 (python3)
-      Tasks: 1 (limit: 6662)
-     Memory: 10.8M
-     CGroup: /system.slice/wsdd.service
-             └─40670 python3 /usr/bin/wsdd --shortlog
-
-jun 10 10:51:39 ubuntu systemd[1]: Started Web Services Dynamic Discovery host daemon.
-jun 10 10:51:40 ubuntu wsdd[40670]: WARNING: no interface given, using all interfaces
-```
+Now that Samba is configured, we need to set up a password for it, and connect to it using our windows computer.
 
 #### Creating a Samba Password
 
@@ -488,7 +471,7 @@ Samba doesn't use the same password as a regular user, but a special samba passw
 sudo smbpasswd -a <username>
 ```
 > [!TIP]
-> <username> doesn't have to be your username. You can use one of the accounts you created in [Exercise 2.2.3](#2.2.3:-Adding-Users).
+> <username> doesn't have to be your username. You can use one of the accounts you created in [Exercise 2.2.3](#2.2.3:-Adding-Users). You just need to make sure to promote the account to an super user account beforehand, otherwise it won't work.
 
 #### Connecting your Windows Server to Samba
 
@@ -498,11 +481,14 @@ sudo smbpasswd -a <username>
 > [!NOTE]
 > In order to connect your Windows Server to Samba you will need the IP address for your Linux vm.
 
-<!-- TODO: Complete instructions-->
+Once you have your Samba password created, switch to your Windows Server VM and ping the Linux server to verify connectivity. Once you have verified connectivity, do the following:
 
-1. Enable insecure guest logons in LGPE
-1. Map network drive to \\<ip>\sambashare
-    Make drive letter S
+1. Open File Explorer and go to "This PC"
+1. Select Computer > Map Network Drive
+1. Make sure the folder is \\<linuxVM-IP>\sambashare and both "Reconnect at sign-in" & "Connect using different credentials" are checked, and then click finish
+1. When prompted, enter the samba log-in credentials you created
+
+Open the Network drive to confirm you are able to access it.
 
 ## Task 4: Disks and Volumes (Windows Server)
 
@@ -521,8 +507,11 @@ In order to convert the disk, we first need to create a second disk to play arou
 > [!WARNING]
 > This section requires use of the Windows GUI. If you are using the CLI only version of Windows Server 2022, skip to [here](#Converting%20a%20Disk%20from%20MBR%20to%20GPT%20(Powershell)).
 
-<!-- TODO: Define MBR & GPT -->
+Windows uses two styles for it's partitions, Master Boot Record (MBR), or GUID Partition Table (GPT). MBR is an older format that was first introduced in the 1980s with IBM. It's the default style on most version of Windows, but it is outdated because you can only make four paritions on it, and the total disk space can only be 2TB. In order to fix those shortcomings, GPT was created in the early 2000s. 
 
+For more information about MBR & GPT paritions, check out the link [here](https://www.easeus.com/partition-master/mbr-vs-gpt.html)
+
+In order to convert your new disk to GPT, complete the following steps:
 1. Right-Click on the start button and select "Disk Management"
 1. Right-Click on disk 1 and select "Convert to GPT Disk"
 
@@ -533,7 +522,9 @@ You have now successfully converted your disk to GPT.
 > [!NOTE]
 > If you completed the instructions in the above section, skip this section.
 
-<!-- TODO: Define MBR & GPT -->
+Windows uses two styles for it's partitions, Master Boot Record (MBR), or GUID Partition Table (GPT). MBR is an older format that was first introduced in the 1980s with IBM. It's the default style on most version of Windows, but it is outdated because you can only make four paritions on it, and the total disk space can only be 2TB. In order to fix those shortcomings, GPT was created in the early 2000s. 
+
+For more information about MBR & GPT paritions, check out the link [here](https://www.easeus.com/partition-master/mbr-vs-gpt.html)
 
 In order to convert your new disk to GPT, launch powershell as an admin and run the following commands:
 ```powershell
@@ -555,9 +546,7 @@ Disk 2 Size: 1006 MB
 > [!WARNING]
 > This section requires use of the Windows GUI. If you are using the CLI only version of Windows Server 2022, skip to [here](#Creating-VHD-&-VHDX-Files-(Powershell)).
 
-<!-- TODO: Define VHD & VHDX -->
-
-#### Creating a VHD
+Now that our disk is coverted to GPT, we can create Virtual Hard Disks on it. Virtual Hard Disks are a way to emulate HDs for VMs. Currently Windows Hyper-V supports two types of Virtual Hard Drives. VHD, and VHD-Extended (VHDX). While VHDX is the more modern and useful of the two, for this exercise we are going to be creating VHD files.
 
 In order to create a VHD, we are going to launch Server Manager. Once it is launched, do the following:
 1. Select tools > computer management > disk management
@@ -582,7 +571,9 @@ In order to create a VHD, we are going to launch Server Manager. Once it is laun
 > [!NOTE]
 > If you completed the instructions in the above section, skip this section.
 
-<!-- TODO: Define VHD & VHDX & List Powershell Commands -->
+Now that our disk is coverted to GPT, we can create Virtual Hard Disks on it. Virtual Hard Disks are a way to emulate HDs for VMs. Currently Windows Hyper-V supports two types of Virtual Hard Drives. VHD, and VHD-Extended (VHDX). While VHDX is the more modern and useful of the two, for this exercise we are going to be creating VHD files.
+
+<!-- TODO:  List Powershell Commands -->
 
 ### Creating SMB & NFS Shares
 
@@ -599,3 +590,8 @@ In order to create an SMB share, you will need to launch Server Manager and do t
 1. Make sure "SMB Share - Quick" is selected and then select next
 1. Select E: and then click next
 1. Named the share "LabShare", then click next > next > next > create
+
+### Server Storage
+
+<!-- TODO: Define Storage Pools -->
+
