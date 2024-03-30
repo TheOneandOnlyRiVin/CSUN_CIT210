@@ -113,7 +113,7 @@ ls -l working.txt
     - A successful conversion of an MBR partition to a GPT partition
     - Your created VHD drive
     - Your shared drive
-    - <!-- TODO: Add last screenshot -->
+    - Your server pool
 
 ## Prerequesites
 
@@ -124,7 +124,16 @@ In order to complete this lab, you will need to have pre-configured a Linux and 
 
 ## Task 1: Explore Linux Commands 
 
-The Lab Assignment on canvas gives step by step instructions for how to complete this task so I won't cover it here.
+The Lab Assignment on canvas gives step-by-step instructions for how to complete this task so I won't cover it here.
+
+## Task 2: 
+
+<!-- TODO: Complete Instruction for Task 2 -->
+
+Questions 1-3 in task 2 are word questions so I won't answer them here. For question 4, enter the following bash command into your terminal:
+```bash
+grep '^<username>:' /etc/passwd
+```
 
 ## Task 2.1: Bash Shell Programming
 
@@ -541,10 +550,10 @@ Disk 1 Size: 4078 MB
 Disk 2 Size: 1006 MB
 -->
 
-### Creating VHD & VHDX Files (GUI)
+### Creating VHD & VHDX Files
 
 > [!WARNING]
-> This section requires use of the Windows GUI. If you are using the CLI only version of Windows Server 2022, skip to [here](#Creating-VHD-&-VHDX-Files-(Powershell)).
+> This section requires use of the Windows GUI.
 
 Now that our disk is coverted to GPT, we can create Virtual Hard Disks on it. Virtual Hard Disks are a way to emulate HDs for VMs. Currently Windows Hyper-V supports two types of Virtual Hard Drives. VHD, and VHD-Extended (VHDX). While VHDX is the more modern and useful of the two, for this exercise we are going to be creating VHD files.
 
@@ -566,15 +575,6 @@ In order to create a VHD, we are going to launch Server Manager. Once it is laun
 1. Assign the drive letter F & select next
 1. Rename the Volume label to "Lab VHD" and then select next > finish
 
-### Creating VHD & VHDX Files (Powershell)
-
-> [!NOTE]
-> If you completed the instructions in the above section, skip this section.
-
-Now that our disk is coverted to GPT, we can create Virtual Hard Disks on it. Virtual Hard Disks are a way to emulate HDs for VMs. Currently Windows Hyper-V supports two types of Virtual Hard Drives. VHD, and VHD-Extended (VHDX). While VHDX is the more modern and useful of the two, for this exercise we are going to be creating VHD files.
-
-<!-- TODO:  List Powershell Commands -->
-
 ### Creating SMB & NFS Shares
 
 > [!WARNING]
@@ -593,5 +593,18 @@ In order to create an SMB share, you will need to launch Server Manager and do t
 
 ### Server Storage
 
+> [!WARNING]
+> This section is still-in progress! Come back later!.
+> ![construct-image](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.mHarBb6inKIqSYfF_n0wMAHaFP%26pid%3DApi&f=1&ipt=05f131b6198dc7595813ceb0c96972b46cd11305791ed0fdf802b6fe4a432071&ipo=images)
+
 <!-- TODO: Define Storage Pools -->
 
+#### Creating a new Disk
+
+In order to create a Storage Pool. Create a new physical disk in Virtual Box the same way you did earlier in Task 4 but this time make it 10GB. Make sure you initialize it in Disk Management, but leave it as unallocated.
+
+#### Creating Storage Pool
+1. Go to File and Storage Services > Storage Pools > Tasks > New Storage Pool
+1. Click next
+1. 
+<!-- TODO: Finish instructions -->
