@@ -128,8 +128,6 @@ The Lab Assignment on canvas gives step-by-step instructions for how to complete
 
 ## Task 2: 
 
-<!-- TODO: Complete Instruction for Task 2 -->
-
 Questions 1-3 in task 2 are word questions so I won't answer them here. For question 4, enter the following bash command into your terminal:
 ```bash
 grep '^<username>:' /etc/passwd
@@ -545,11 +543,6 @@ convert gpt
 ```
 You have now successfully converted your disk to GPT.
 
-<!-- REFERENCES:
-Disk 1 Size: 4078 MB
-Disk 2 Size: 1006 MB
--->
-
 ### Creating VHD & VHDX Files
 
 > [!WARNING]
@@ -580,7 +573,7 @@ In order to create a VHD, we are going to launch Server Manager. Once it is laun
 > [!WARNING]
 > This section requires use of the Windows GUI.
 
-<!-- TODO: Define SMB & NFS -->
+As you learned in Task 3, the SMB protocol is a protocol used to share files between Windows systems or between Windows and non-Windows systems for file storage or printing. Another protocol is the NFS, or Network File System Protocol. For this section, we will be creating an SMB share.
 
 In order to create an SMB share, you will need to launch Server Manager and do the following:
 1. Select File & Storage Services > Volumes > E
@@ -597,7 +590,7 @@ In order to create an SMB share, you will need to launch Server Manager and do t
 > This section is still-in progress! Come back later!.
 > ![construct-image](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.mHarBb6inKIqSYfF_n0wMAHaFP%26pid%3DApi&f=1&ipt=05f131b6198dc7595813ceb0c96972b46cd11305791ed0fdf802b6fe4a432071&ipo=images)
 
-<!-- TODO: Define Storage Pools -->
+<!-- Commenting out these instructions since I'm not sure if they work or not. Wasn't able to get it working.
 
 #### Creating a new Disk
 
@@ -607,4 +600,4 @@ In order to create a Storage Pool. Create a new physical disk in Virtual Box the
 1. Go to File and Storage Services > Storage Pools > Tasks > New Storage Pool
 1. Click next
 1. 
-<!-- TODO: Finish instructions -->
+-->
