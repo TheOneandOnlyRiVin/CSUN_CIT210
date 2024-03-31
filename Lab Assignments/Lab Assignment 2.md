@@ -492,7 +492,7 @@ Once you have your Samba password created, switch to your Windows Server VM and 
 
 1. Open File Explorer and go to "This PC"
 1. Select Computer > Map Network Drive
-1. Make sure the folder is \\<linuxVM-IP>\sambashare and both "Reconnect at sign-in" & "Connect using different credentials" are checked, and then click finish
+1. Make sure the folder is `\\<linuxVM-IP>\sambashare` and both "Reconnect at sign-in" & "Connect using different credentials" are checked, and then click finish
 1. When prompted, enter the samba log-in credentials you created
 
 Open the Network drive to confirm you are able to access it.
