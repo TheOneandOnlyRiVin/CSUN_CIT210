@@ -58,9 +58,34 @@ For this Lab you will be turning in a Word doc that contains the following:
 
 ## Task 1: Install Configure and Run Wireshark
 
+Wireshark is a valuable tool commonly used by IT professionals to monitor network traffic. It can be used by network administrators to troubleshoot issues or bad actors to steal unencrypted information. In this task we will be installing & configuring wireshark and seeing it's capabilities.
+
+### Installing Wireshark
+
+Open your Linux VM and launch the terminal. Run the following commands to install Wireshark:
+```bash
+sudo apt update
+sudo apt upgrade -y
+sudo apt install wireshark -y
+```
+Once you run the last command, your terminal should automatically open a prompt that ask you if non-superusers should be able to capture packets. Make sure NO is selected and press enter. You should now be able to launch wireshark by typing in `sudo wireshark`.
+
+#### Error Correction
+
+If you run into the error `couldn't run /usr/bin/dumpcap in child process: Permission Denied`, then you need to run the following command:
+``` bash
+sudo dpkg-reconfigure wireshark-common
+```
+This time, select YES. This creates a special wireshark group. Now that the group is created, then you need to add your user account to the group. Type in the following command:
+```bash
+sudo adduser $USER wireshark
+```
+Restart your VM and launch wireshark through the terminal.
+
+### Capturing Traffic
+
 > [!WARNING]
 > This section is still-in progress! Come back later!.
-
 <!-- TODO: Complete Section -->
 
 ## Task 2: Capturing Web Traffic Using Wireshark
