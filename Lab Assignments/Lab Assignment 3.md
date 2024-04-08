@@ -84,55 +84,63 @@ Restart your VM and launch wireshark through the terminal.
 
 ### Capturing Traffic
 
-> [!WARNING]
-> This section is still-in progress! Come back later!.
-<!-- TODO: Complete Section -->
+Follow these steps to start capturing network traffic.
+1. Open Firefox or a similar web browser to verify internet connectivity
+1. On Wireshark, select Capture > Options
+1. Uncheck "Enable promiscious mode on all interfaces" and then select "enp0s3"
+1. Click start
+1. Switch back to Firefox and go to a website, like the Wikepedia article for Wireshark.
+1. Once the webpage finishes loading, switch back to Wireshark. Your screen should something like this:
+
+![wiresharkLab1](Pictures/Task1_Wireshark.png)
+
+Now you have successfully completed installing & configuring wireshark!
 
 ## Task 2: Capturing Web Traffic Using Wireshark
 
 > [!WARNING]
-> This section is still-in progress! Come back later!.
+> This section is still-in progress! Come back later!
 
 <!-- TODO: Complete Section -->
 
 ## Task 3: Basic Apache Configuration
 
 > [!WARNING]
-> This section is still-in progress! Come back later!.
+> This section is still-in progress! Come back later!
 
 <!-- TODO: Complete Section -->
 
 ### Exercise 1: Installation and Basic Configuration of the Apache Web Server
 
 > [!WARNING]
-> This section is still-in progress! Come back later!.
+> This section is still-in progress! Come back later!
 
 <!-- TODO: Complete Section -->
 
 ### Exercise 2: Exercise 2: Locating Key Apache Files and Folders
 
 > [!WARNING]
-> This section is still-in progress! Come back later!.
+> This section is still-in progress! Come back later!
 
 <!-- TODO: Complete Section -->
 
 ### Exercise 3: Configure and Run Apache Web Server
 
 > [!WARNING]
-> This section is still-in progress! Come back later!.
+> This section is still-in progress! Come back later!
 
 <!-- TODO: Complete Section -->
 
 ## Task 4: Install, Configure Connect FTP Server & Record Traffic Using Wireshark
 
 > [!WARNING]
-> This section is still-in progress! Come back later!.
+> This section is still-in progress! Come back later!
 
 <!-- TODO: Complete Section -->
 
 ## Task 5: Install Configure and Transfer Files from tftp Server to tftp Client using tftp64 Application 
 
 > [!WARNING]
-> This section is still-in progress! Come back later!.
+> This section is still-in progress! Come back later!
 
 <!-- TODO: Complete Section -->
