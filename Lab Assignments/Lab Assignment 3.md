@@ -92,7 +92,7 @@ Follow these steps to start capturing network traffic.
 1. Switch back to Firefox and go to a website, like the Wikepedia article for Wireshark.
 1. Once the webpage finishes loading, switch back to Wireshark. Your screen should something like this:
 
-![wiresharkLab1](Pictures/Task1_Wireshark.png)
+![Wireshark Traffic Example Task 1](/Pictures/Task1_Wireshark.png)
 
 Now you have successfully completed installing & configuring wireshark!
 
