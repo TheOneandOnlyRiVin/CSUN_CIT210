@@ -23,12 +23,12 @@ For this Lab you will be turning in a Word doc that contains the following:
 
 **Task 2**
 1. Screenshot of Wireshark data from an HTTP page.
-1. Answers to the following questions: <br>
-    a. Which version of the HTTP protocol is used in these transactions? <br>
-    b. What is the domain name of the Web server? <br>
-    c. What browser and version does the client use in this capture? <br>
-    d. What software and version is running on the Web server? <br>
-    e. What other documents/files did the client request during this transaction? <br>
+1. Answers to the following questions: 
+    - Which version of the HTTP protocol is used in these transactions? 
+    - What is the domain name of the Web server? 
+    - What browser and version does the client use in this capture? 
+    - What software and version is running on the Web server? 
+    - What other documents/files did the client request during this transaction? 
 
 **Task 3**
 1. Screenshots of the following:
