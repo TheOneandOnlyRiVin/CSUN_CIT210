@@ -10,7 +10,7 @@
 * [Task 2](#task-2-capturing-web-traffic-using-wireshark)
 * [Task 3](#task-3-basic-apache-configuration)
     * [Exercise 1](#exercise-1-installation-and-basic-configuration-of-the-apache-web-server)
-    * [Exercise 2](#exercise-2-exercise-2-locating-key-apache-files-and-folders)
+    * [Exercise 2](#exercise-2-locating-key-apache-files-and-folders)
     * [Exercise 3](#exercise-3-configure-and-run-apache-web-server)
 * [Task 4](#task-4-install-configure-connect-ftp-server--record-traffic-using-wireshark)
 
@@ -90,7 +90,7 @@ Follow these steps to start capturing network traffic.
 1. Uncheck "Enable promiscious mode on all interfaces" and then select "enp0s3"
 1. Click start
 1. Switch back to Firefox and go to a website, like the Wikepedia article for Wireshark.
-1. Once the webpage finishes loading, switch back to Wireshark. Your screen should something like this:
+1. Once the webpage finishes loading, switch back to Wireshark and stop capturing. Your screen should something like this:
 
 ![Wireshark Traffic Example Task 1](/Pictures/Task1_Wireshark.png)
 
@@ -98,10 +98,15 @@ Now you have successfully completed installing & configuring wireshark!
 
 ## Task 2: Capturing Web Traffic Using Wireshark
 
-> [!WARNING]
-> This section is still-in progress! Come back later!
+1. Open wireshark and start capturing traffic like you did in the last task.
+1. Open Firefox and go to neverssl.com
+1. Once the website finishes loading, go back to Wireshark and stop capturing. 
 
-<!-- TODO: Complete Section -->
+> [!TIP]
+> Make sure you launch Firefox before you start recording to limit the amount of web traffic that gets captured.
+
+4. Once you stop capturing packets, scroll to the top of the list and look for the first HTTP frame. You will find the information regarding the HTTP version used, the browser the user accessed the site from.
+1. At the bottom of the HTTP field in the frame, it should list which frame contains the response. That frame contains information about the applications running on the server.
 
 ## Task 3: Basic Apache Configuration
 
@@ -117,7 +122,7 @@ Now you have successfully completed installing & configuring wireshark!
 
 <!-- TODO: Complete Section -->
 
-### Exercise 2: Exercise 2: Locating Key Apache Files and Folders
+### Exercise 2: Locating Key Apache Files and Folders
 
 > [!WARNING]
 > This section is still-in progress! Come back later!
