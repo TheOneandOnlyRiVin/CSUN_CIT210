@@ -70,9 +70,11 @@ sudo apt install wireshark -y
 ```
 Once you run the last command, your terminal should automatically open a prompt that ask you if non-superusers should be able to capture packets. Make sure NO is selected and press enter. You should now be able to launch wireshark by typing in `sudo wireshark`.
 
-#### Error Correction
+If you run into the error `couldn't run /usr/bin/dumpcap in child process: Permission Denied`, check in details. Otherwise, continue to Capturing Traffic. 
 
-If you run into the error `couldn't run /usr/bin/dumpcap in child process: Permission Denied`, then you need to run the following command:
+<details>
+
+On your Linux Terminal, type in the following bash commands:
 ``` bash
 sudo dpkg-reconfigure wireshark-common
 ```
@@ -81,6 +83,7 @@ This time, select YES. This creates a special wireshark group. Now that the grou
 sudo adduser $USER wireshark
 ```
 Restart your VM and launch wireshark through the terminal.
+</details>
 
 ### Capturing Traffic
 
