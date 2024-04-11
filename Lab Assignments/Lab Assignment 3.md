@@ -113,17 +113,21 @@ Now you have successfully completed installing & configuring wireshark!
 
 ## Task 3: Basic Apache Configuration
 
-> [!WARNING]
-> This section is still-in progress! Come back later!
-
-<!-- TODO: Complete Section -->
+The Apache HTTP Server (“httpd”) is the most commonly used web server on Linux systems. It is used to host most of the smaller-medium sized websites on the internet (including neverssl.com).
 
 ### Exercise 1: Installation and Basic Configuration of the Apache Web Server
 
-> [!WARNING]
-> This section is still-in progress! Come back later!
-
-<!-- TODO: Complete Section -->
+Before we install Apache, we should first make sure it is not already installed. To do that, run the following bash command:
+```bash
+apt-cache policy apache2
+```
+You should see in the text that was written back to the CLI `Installed: (none)`. That means that it is not installed. Which means it's time to install it. Run the following commands in your terminal:
+```bash
+sudo apt update
+sudo apt upgrade -y # you already want to make sure you update/upgrade before installing anything!
+sudo apt install apache2 -y
+```
+You can now run the `apt-cache...` command again to verify that it was successfully installed.
 
 ### Exercise 2: Locating Key Apache Files and Folders
 
