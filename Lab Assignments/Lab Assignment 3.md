@@ -131,10 +131,30 @@ You can now run the `apt-cache...` command again to verify that it was successfu
 
 ### Exercise 2: Locating Key Apache Files and Folders
 
-> [!WARNING]
-> This section is still-in progress! Come back later!
+Here are the locations of the key files & folders for the Apache service.
 
-<!-- TODO: Complete Section -->
+#### Apache Reference Manual
+
+`/use/share/doc/apache2/README.Debian.gz`
+
+#### Apache Configuration File
+
+`/etc/apache2/apache2.conf`
+
+#### Document Root
+
+`/usr/share/apache2/build.`
+
+#### Error Documents Directory
+
+`/usr/share/apache2/error/.`
+
+#### Log files
+
+`/var/log/apache2/.`
+
+#### The Apache daemon (executable)
+`/usr/sbin/apache2`
 
 ### Exercise 3: Configure and Run Apache Web Server
 
