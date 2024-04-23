@@ -158,10 +158,20 @@ Here are the locations of the key files & folders for the Apache service.
 
 ### Exercise 3: Configure and Run Apache Web Server
 
-> [!WARNING]
-> This section is still-in progress! Come back later!
-
-<!-- TODO: Complete Section -->
+To start the apache web server, run the following bash commands:
+```bash
+sudo service apache2 start
+sudo service apache2 status
+```
+The output should say apache2.service is active. You will now further verify that it is working properly by checking the network activity using `netstat`. Run the following command to check for all network activity of the apache web server:
+```bash
+sudo netstat -npl | grep apache
+```
+Your output should look something like this:
+```
+tcp6    0       0 :::80           :::*               LISTEN
+776/apache2
+```
 
 ## Task 4: Install, Configure Connect FTP Server & Record Traffic Using Wireshark
 
