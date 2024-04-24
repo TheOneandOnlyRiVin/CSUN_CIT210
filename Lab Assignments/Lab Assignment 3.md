@@ -175,6 +175,58 @@ tcp6    0       0 :::80           :::*               LISTEN
 
 ## Task 4: Install, Configure Connect FTP Server & Record Traffic Using Wireshark
 
+### Installing & Configuring the FileZilla Server
+
+Filezilla is an open source FTP software that supports both Linux & Windows. It works through a server-client system, where there is a server that hosts the files and a client that can retrieve them. Our first step for configuring FileZilla is going to be installing the FileZila server. To do this you are going to need to launch your Windows VM.
+
+Once you have your Windows Server VM open follow the below steps:
+1. Download FileZilla for server by following the link [here](https://filezilla-project.org/download.php?type=server).
+1. Launch the installer once it's downloaded
+1. Make sure "full" is selected for the installation type and select next > next > next > next.
+1. When it asks for you to set the administration password, choose something easy to remeber.
+1. Click next > install
+1. Click okay, then copy the SHA256 fingerprint to your clipboard, then select close
+1. Open notepad and paste the fingerprint there.
+1. Go to the FileZilla administration interface and select "connect to server"
+1. Enter the password you had entered before and connect
+1. Click yes when it asks you about the fingerprint.
+
+Now that you have the server installed, you need to configure it. Follow the below steps:
+1. Click Server > Network configuration Wizard
+1. Click next and make sure Any is selected
+1. Leave the box blank and click next again
+1. Click Finish
+
+You have now set up and configured the FileZilla Server
+
+<!-- TO BE DELETED
+    IP addy: 10.0.2.6
+    Listening port for FileZilla: 14148
+    Password used: SambaT1me
+    Certificate fingerprint: 40:2c:1f:96:3a:d5:34:3f:ac:43:3b:16:81:a3:cf:bc:5d:f8:c7:e9:87:fc:b0:3b:ad:6d:f4:18:51:67:be:6f
+-->
+
+### Installing & Configuring the FileZilla client
+
+Switch back to your Linux VM and run the below terminal commands:
+```bash
+sudo apt update
+sudo apt upgrade -y
+sudo apt install filezilla -y
+```
+Once that finishes installing you can verify the installation by running the command `filezilla --version`. Find the application in the applications menu and launch it. 
+
+Once it's open, follow the below steps to configure it & connect to the server:
+1. Go to Edit > "Network Configuration Wizard"
+1. Click next
+1. Make sure the settings on the next window is set to passive and that the "allow fallback..." box is checked, then click next.
+1. Make sure "Use the server's external..." is selected and then click next
+1. Select "Use the following IP Address" and input the address of the Windows Server VM.Click next.
+    > [!WARNING]
+    > On FileZilla Server, is says you are connected to 127.0.0.1. That is not the Windows Server IP address. 
+1. Make sure "Ask OS for a port is selected" and then click next.
+
+
 > [!WARNING]
 > This section is still-in progress! Come back later!
 
