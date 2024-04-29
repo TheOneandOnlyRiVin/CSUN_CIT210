@@ -28,7 +28,6 @@ netsh advfirewall firewall
 add rule name="Allow ICMPv4 Requests" protocol=icmpv4:8,any dir=in action=allow
 ```
 Press Ctrl+C, then ping your Linux VM to make sure everything is set up successfully.
-Press Ctrl+C, then ping your Linux VM to make sure everything is set up successfully.
 
 ## Ubuntu VM
 
@@ -56,4 +55,7 @@ then add the following text at the bottom next to the admin user:
 
 To bring your VM up to spec for lab 2, input the following bash commands:
 
-TODO: Insert Bash Commands
+> [!WARNING]
+> This section is still-in progress! Come back later!
+
+<!-- TODO: Complete Section -->
