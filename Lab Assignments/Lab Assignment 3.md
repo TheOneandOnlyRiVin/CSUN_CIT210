@@ -56,6 +56,9 @@ For this Lab you will be turning in a Word doc that contains the following:
 1. A screenshot of the packets sent during FTP between the FTP server and FileZilla client. 
 1. Which ftp ports were used for communication.
 
+> [!WARNING]
+> This assignment requires use of the Windows GUI. If you have the CLI-only version of Windows Server 2022, these instructions will not be able to fully help you.
+
 ## Task 1: Install Configure and Run Wireshark
 
 Wireshark is a valuable tool commonly used by IT professionals to monitor network traffic. It can be used by network administrators to troubleshoot issues or bad actors to steal unencrypted information. In this task we will be installing & configuring wireshark and seeing it's capabilities.
@@ -175,38 +178,58 @@ tcp6    0       0 :::80           :::*               LISTEN
 
 ## Task 4: Install, Configure Connect FTP Server & Record Traffic Using Wireshark
 
+FileZilla is an open source FTP software that supports both Linux & Windows. It works through a server-client system, where there is a server that hosts the files and a client that can retrieve them.
+
+**Table of Contents**
+- [Creating a New Windows User](#creating-a-new-windows-user)
+- [Installing & Configuring the FileZilla Server](#installing--configuring-the-filezilla-server)
+- [Configuring the Windows Firewall & VM Network Settings](#configuring-the-windows-firewall--vm-network-settings)
+- [Installing & Configuring the Filezilla Client](#installing--configuring-the-filezilla-client)
+
+### Creating a New Windows User
+
+In order to use FileZilla, you need to first create a user account that the Linux user will log in with. Open up your Windows VM and follow the below steps:
+1. Open Settings > Accounts > Other users > "Add someone else to this PC"
+1. Select Users from the left hand menu
+1. Select Actions > New User
+1. Select a username that is the same as your Linux username ***but a password that is different***.
+1. Uncheck "User must change password at next login" and check "Password never expires"
+1. Select "Create" and then close all open windows 
+
 ### Installing & Configuring the FileZilla Server
 
-Filezilla is an open source FTP software that supports both Linux & Windows. It works through a server-client system, where there is a server that hosts the files and a client that can retrieve them. Our first step for configuring FileZilla is going to be installing the FileZila server. To do this you are going to need to launch your Windows VM.
-
-Once you have your Windows Server VM open follow the below steps:
-1. Download FileZilla for server by following the link [here](https://filezilla-project.org/download.php?type=server).
+Our first step for configuring FileZilla is going to be installing the FileZila server. To do this follow the below steps:
+1. Download FileZilla for server by following the link [here](https://filezilla-project.org/download.php?type=server)
 1. Launch the installer once it's downloaded
-1. Make sure "full" is selected for the installation type and select next > next > next > next.
-1. When it asks for you to set the administration password, choose something easy to remeber.
+1. Make sure "full" is selected for the installation type and select next > next > next > next
+1. When it asks for you to set the administration password, choose something easy to remeber
 1. Click next > install
 1. Click okay, then copy the SHA256 fingerprint to your clipboard, then select close
-1. Open notepad and paste the fingerprint there.
+1. Open notepad and paste the fingerprint there
 1. Go to the FileZilla administration interface and select "connect to server"
 1. Enter the password you had entered before and connect
-1. Click yes when it asks you about the fingerprint.
+1. Click yes when it asks you about the fingerprint
 
-Now that you have the server installed, you need to configure it. Follow the below steps:
-1. Click Server > Network configuration Wizard
-1. Click next and make sure Any is selected
-1. Leave the box blank and click next again
-1. Click Finish
+Now that you have the server installed, you need to configure the user account. Follow the below steps:
+1. Press Ctrl + F to open the server settings
+1. Select Users > Add
+1. Type out the same username you just created then press enter
+1. Make sure "User is enabled" is selected and that Authentication is set to "Use system credentials to log in"
+1. In mount points, select add. For the Virtual Path, put `/`. In the Native Path, put `C:\Users\<username>`
+1. Click Apply, then Okay
 
-You have now set up and configured the FileZilla Server
+Now you have the FileZilla server configured. But before you can connect to it, you need to configure the Windows Firewall to allow traffic from the app.
 
-<!-- TO BE DELETED
-    IP addy: 10.0.2.6
-    Listening port for FileZilla: 14148
-    Password used: SambaT1me
-    Certificate fingerprint: 40:2c:1f:96:3a:d5:34:3f:ac:43:3b:16:81:a3:cf:bc:5d:f8:c7:e9:87:fc:b0:3b:ad:6d:f4:18:51:67:be:6f
--->
+### Configuring the Windows Firewall & VM Network Settings
 
-### Installing & Configuring the FileZilla client
+1. Open the search bar and type in "Firewall" and select the top result
+1. Select "Allow an app through firewall" > "Allow another app"
+1. For the path put `C:\Program Files\Filezilla Server\filezilla-server.exe`
+1. Select add, then okay
+
+Now that the firewall is configured, you need to change the VM network settings in order to allow the FileZilla client & server to communicate. Go to VirtualBox and click on settings for **both** the Linux and Windows machines. In network settings, change the adapter from NAT Network to Bridged Connector. Have each VM ping each other to verify connectivity.
+
+### Installing & Configuring the FileZilla Client
 
 Switch back to your Linux VM and run the below terminal commands:
 ```bash
@@ -216,21 +239,17 @@ sudo apt install filezilla -y
 ```
 Once that finishes installing you can verify the installation by running the command `filezilla --version`. Find the application in the applications menu and launch it. 
 
-Once it's open, follow the below steps to configure it & connect to the server:
-1. Go to Edit > "Network Configuration Wizard"
-1. Click next
-1. Make sure the settings on the next window is set to passive and that the "allow fallback..." box is checked, then click next.
-1. Make sure "Use the server's external..." is selected and then click next
-1. Select "Use the following IP Address" and input the address of the Windows Server VM.Click next.
-    > [!WARNING]
-    > On FileZilla Server, is says you are connected to 127.0.0.1. That is not the Windows Server IP address. 
-1. Make sure "Ask OS for a port is selected" and then click next.
+Once FileZilla is launched, you should see a bar along the top for quick connect. Enter the below information and then press "Quickconnect":
+- Host: Windows VM IP address
+- Username/Password: the account credentials you created at the start of this task
+- Port: Leave this blank
 
+If you have followed these instructions correctly it should say that you have successfully connected to the server.
 
-> [!WARNING]
-> This section is still-in progress! Come back later!
+>[!NOTE]
+> You may encounter an error that says "Failed to retrieve directory listing". Ignore it.
 
-<!-- TODO: Complete Section -->
+In order to complete the task, you need to upload a file to the remote site. You can either create a file or upload an existing one, it doesn't matter. If it uploads successfully, then congratulations!
 
 ## Task 5: Install Configure and Transfer Files from tftp Server to tftp Client using tftp64 Application 
 
