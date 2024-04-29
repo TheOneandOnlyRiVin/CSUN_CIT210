@@ -253,6 +253,43 @@ In order to complete the task, you need to upload a file to the remote site. You
 
 ## Task 5: Install Configure and Transfer Files from tftp Server to tftp Client using tftp64 Application 
 
+### Enable & Configure tftp on your Windows Server
+
+Windows comes with tftp preinstalled, you simply have to enable it.
+1. Open Control Panel & go to programs > "Turn Windows features on or off". It should open Server Manager and bring up the "Add Roles and Features Wizard"
+1. Make sure "Role-Based or..." is select and then click next
+1. Select your machine from the server pool and click next again
+1. Don't change anything on Server Roles and click next
+1. In features, scroll down and select "tftp client", then next > finish > close
+
+Now that tftp is configured, you need to configure the Window firewall to allow tftp traffic.
+1. Open the search bar and type in "Firewall" and select the top result
+1. Select "Allow an app through firewall" > "Allow another app"
+1. For the path put `C:\Windows\System32\TFTP.EXE`
+1. Select add, then okay
+
+### Install tftp on your Linux Machine
+
+To install tftp, switch back to your Linux machine and enter the following bash commands:
+```bash
+sudo apt update
+sudo apt upgrade -y
+sudo apt install atftpd -y
+atfpd --daemon
+-$ps -ef | grep atftpd # to check that it's installed
+```
+
+Now that tftp is installed on both your Windows & Linux machines, you should test it by creating a .txt document on your Windows Server desktop and entering the following powershell command:
+```powershell
+tftp <Linux VM IP> PUT C:\Users\<username>\Desktop\<filename>
+```
+And the following bash command
+```bash
+ls /srv/tftp
+```
+
+### Monitoring tftp traffic
+
 > [!WARNING]
 > This section is still-in progress! Come back later!
 
